@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+
+:root {
+  --cream: #F5EFE6;         /* warmer, inviting */
+  --dark-navy: #0A1121;      /* deeper, more elegant */
+  --navy: #162135;           /* slightly lighter for contrast */
+  --gold: #D4AF37;           /* true gold, not mustard */
+  --gold-light: #E9C86E;     /* brighter gold for interactive */
+  --charcoal: #2C3E50;       /* keep as is */
+  --warm-gray: #A89F8D;      /* softer, more natural */
+  --off-white: #FCFAF7;      /* cleaner background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%);
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.bg-dark-navy {
+  background-color: var(--dark-navy);
+}
+
+.bg-cream {
+  background-color: var(--cream);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.hero-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  animation: slideRight 1s ease 0.5s forwards;
+  width: 0;
+}
