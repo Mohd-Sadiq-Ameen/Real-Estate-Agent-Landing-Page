@@ -23,19 +23,23 @@ export default function Navbar() {
   ];
 
   // Smooth scroll handler with offset for fixed navbar
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
-      const navbarHeight = 120; // approximate height of fixed navbar (top bar + main nav)
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const navbarHeight = 100; // adjust to your actual navbar height
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navbarHeight,
         behavior: "smooth",
       });
     }
-    setOpen(false); // close mobile menu if open
+    setOpen(false);
   };
 
   return (
@@ -63,7 +67,11 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 lg:py-7 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="flex items-center gap-4 cursor-pointer">
+        <a
+          href="#home"
+          onClick={(e) => handleScroll(e, "#home")}
+          className="flex items-center gap-4 cursor-pointer"
+        >
           <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
             <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">
               RS

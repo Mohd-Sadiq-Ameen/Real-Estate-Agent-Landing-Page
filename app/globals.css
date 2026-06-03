@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
+/* =========================
+   DESIGN SYSTEM
+========================= */
 
 :root {
-  --cream: #F5EFE6;         /* warmer, inviting */
-  --dark-navy: #0A1121;      /* deeper, more elegant */
-  --navy: #162135;           /* slightly lighter for contrast */
-  --gold: #D4AF37;           /* true gold, not mustard */
-  --gold-light: #E9C86E;     /* brighter gold for interactive */
-  --charcoal: #2C3E50;       /* keep as is */
-  --warm-gray: #A89F8D;      /* softer, more natural */
-  --off-white: #FCFAF7;      /* cleaner background */
+  --bg: #F5EFE6;
+  --surface: #FFFFFF;
+  --text: #0F1923;
+  --muted: #6B6258;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
 }
+
+/* =========================
+   BASE RESET
+========================= */
 
 * {
   margin: 0;
@@ -22,64 +27,84 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
 }
 
-* {
-  box-sizing: border-box;
-}
+/* =========================
+   TYPOGRAPHY
+========================= */
 
 .font-display {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
-.gold-gradient {
-  background: linear-gradient(135deg, #C9A84C 0%, #E8C96A 50%, #C9A84C 100%);
-}
+/* =========================
+   UTILITIES
+========================= */
 
 .text-gold {
   color: var(--gold);
 }
 
-.bg-navy {
-  background-color: var(--navy);
+.bg-gold {
+  background-color: var(--gold);
 }
 
-.bg-dark-navy {
-  background-color: var(--dark-navy);
+.bg-surface {
+  background-color: var(--surface);
 }
 
-.bg-cream {
-  background-color: var(--cream);
-}
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideRight {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-up {
   animation: fadeUp 0.7s ease forwards;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease forwards;
-}
+/* =========================
+   HERO LINE EFFECT
+========================= */
 
 .hero-line::after {
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), transparent);
-  animation: slideRight 1s ease 0.5s forwards;
   width: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* =========================
+   HIDE SCROLLBAR (CAROUSEL)
+========================= */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;   /* IE and Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
 }

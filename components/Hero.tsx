@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Phone, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -10,24 +11,24 @@ export default function Hero() {
     >
       {/* Background – unchanged */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85"
           alt="Luxury property South Delhi"
-          className="w-full h-full object-cover"
+          fill
+          priority={false}
+          className="object-cover"
         />
+
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F1923]/95 via-[#0F1923]/80 to-[#0F1923]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/60 via-transparent to-transparent" />
       </div>
 
-
       {/* Content – same widths, same font sizes, but tighter vertical spacing */}
 
-
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="h-10"></div>
+        <div className="h-10"></div>
 
         {/* Trust line – reduced bottom margin */}
-      
 
         {/* Heading – same font sizes, same leading, reduced bottom margin */}
         <h1
@@ -125,7 +126,7 @@ export default function Hero() {
           <div className="grid grid-cols-3 gap-8 w-full max-w-lg">
             {[
               { num: "500+", label: "DEALS" },
-              { num: "25+", label: "YEARS" },
+              { num: "10+", label: "YEARS" },
               { num: "1000+", label: "CLIENTS" },
             ].map((s) => (
               <div key={s.label} className="text-center">

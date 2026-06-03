@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const areas = [
   {
     name: "Defence Colony",
@@ -126,18 +128,12 @@ export default function Areas() {
                 hover:shadow-2xl
               "
             >
-              <div className="overflow-hidden">
-                <img
+              <div className="overflow-hidden relative w-full h-[260px]">
+                <Image
                   src={area.img}
                   alt={area.name}
-                  className="
-                    w-full
-                    h-[260px]
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                  "
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 

@@ -7,6 +7,8 @@ import {
   FileText,
 } from "lucide-react";
 
+import Image from "next/image";
+
 const services = [
   {
     icon: Home,
@@ -137,12 +139,16 @@ export default function Services() {
               "
             >
               <div className="relative h-60 md:h-64 overflow-hidden">
-                <img
+                <Image
                   src={s.img}
                   alt={`${s.title} - Royal Siyaram Estate`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/60 to-transparent" />
+
                 <div className="absolute bottom-4 left-4">
                   <span className="text-[10px] text-[#C9A84C] tracking-[0.2em] uppercase bg-[#0F1923]/60 backdrop-blur-sm px-2 py-1">
                     {s.subtitle}

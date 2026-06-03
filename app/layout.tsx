@@ -28,13 +28,30 @@ export default function RootLayout({
               "@type": "RealEstateAgent",
               name: "Royal Siyaram Estate",
               telephone: "+919818077956",
+
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "South Delhi",
+                addressCountry: "IN",
+              },
+
+              areaServed: [
+                "South Delhi",
+                "Greater Kailash",
+                "Defence Colony",
+                "GK-1",
+                "GK-2",
+                "Saket",
+              ],
+
+              openingHours: "Mo-Su 09:00-20:00",
+
+              url: "https://your-domain.com",
             }),
           }}
         />
       </head>
-      <body className={dmSans.className}>
-        {children}
-      </body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   );
 }
