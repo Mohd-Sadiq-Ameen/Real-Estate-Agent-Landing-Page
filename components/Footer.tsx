@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="text-white/60 text-sm leading-relaxed max-w-sm mb-6">
               South Delhi's trusted estate agents for residential, rental and commercial properties. Serving buyers, sellers and tenants with integrity and expertise.
             </p>
-            <div className="flex gap-3" />
+            {/* Removed the empty <div className="flex gap-3" /> */}
           </div>
 
           {/* Services */}

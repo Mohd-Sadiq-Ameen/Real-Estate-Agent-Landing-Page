@@ -8,7 +8,7 @@ const areas = [
     props: "200+ Properties",
   },
   {
-    name: "Greater Kailash)",
+    name: "Greater Kailash (GK-1 & GK-2)",
     desc: "Affluent neighbourhood with luxury homes, vibrant markets and excellent connectivity with strong rental demand.",
     img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
     props: "150+ Properties",
@@ -52,60 +52,41 @@ export default function Areas() {
       id="areas"
       className="bg-[#F5F0E8] overflow-hidden"
       style={{
-        paddingTop: "3rem", // pt-12 (48px)
-        paddingBottom: "3rem", // pb-12 (48px)
+        paddingTop: "3rem",
+        paddingBottom: "3rem",
       }}
     >
-      {/* Responsive padding overrides (optional – slightly more on larger screens but still modest) */}
+      {/* Responsive padding overrides */}
       <style>{`
         @media (min-width: 768px) {
           #areas {
-            padding-top: 4rem !important;    /* 64px */
+            padding-top: 4rem !important;
             padding-bottom: 4rem !important;
           }
         }
         @media (min-width: 1024px) {
           #areas {
-            padding-top: 5rem !important;    /* 80px */
+            padding-top: 5rem !important;
             padding-bottom: 5rem !important;
           }
         }
       `}</style>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
+      {/* Centered container – forced with inline styles */}
+      <div
+        className="w-full px-6 lg:px-8"
+        style={{
+          maxWidth: "1400px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center">
-          <h2
-            className="
-              font-display
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              text-[#0F1923]
-              font-normal
-              leading-[0.95]
-              mb-8
-            "
-          >
+          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95] mb-8">
             Popular <span className="italic text-[#C9A84C]">Areas</span>
           </h2>
-
-          <p
-            className="
-              w-full
-              max-w-[780px]
-              mx-auto
-              text-center
-              text-lg
-              md:text-xl
-              leading-[1.9]
-              text-[#475467]
-              mb-20
-              md:mb-24
-              lg:mb-32
-            "
-          >
+          <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467] mb-20 md:mb-24 lg:mb-32">
             Explore South Delhi's most desirable neighbourhoods where luxury
             living, premium infrastructure and long-term investment potential
             come together.
@@ -113,31 +94,11 @@ export default function Areas() {
         </div>
 
         {/* Area Cards */}
-        <div
-          className="
-            grid
-            grid-cols-1
-            md:grid-cols-2
-            xl:grid-cols-4
-            gap-8
-            xl:gap-10
-          "
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-10">
           {areas.map((area, i) => (
             <div
               key={i}
-              className="
-                group
-                bg-white
-                rounded-2xl
-                overflow-hidden
-                border
-                border-[#E7E2D8]
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                hover:shadow-2xl
-              "
+              className="group bg-white rounded-2xl overflow-hidden border border-[#E7E2D8] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
               <div className="overflow-hidden relative w-full h-[260px]">
                 <Image
@@ -147,60 +108,22 @@ export default function Areas() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-
               <div className="p-8 lg:p-9 flex flex-col flex-1">
-                <h3
-                  className="
-                    font-display
-                    text-3xl
-                    lg:text-[2rem]
-                    text-[#0F1923]
-                    mb-3
-                  "
-                >
+                <h3 className="font-display text-3xl lg:text-[2rem] text-[#0F1923] mb-3">
                   {area.name}
                 </h3>
-
-                <p
-                  className="
-                    text-[#C9A84C]
-                    text-sm
-                    font-medium
-                    mb-6
-                  "
-                >
+                <p className="text-[#C9A84C] text-sm font-medium mb-6">
                   {area.props}
                 </p>
-
-                <p
-                  className="
-                    text-[#667085]
-                    text-[15px]
-                    leading-8
-                    flex-1
-                    mb-8
-                  "
-                >
+                <p className="text-[#667085] text-[15px] leading-8 flex-1 mb-8">
                   {area.desc}
                 </p>
-
                 <div className="flex justify-center">
                   <a
                     href="https://wa.me/919818077956"
                     target="_blank"
                     rel="noopener"
-                    className="
-                      inline-flex
-                      items-center
-                      text-[#C9A84C]
-                      text-sm
-                      uppercase
-                      tracking-[0.15em]
-                      font-medium
-                      hover:gap-2
-                      transition-all
-                      duration-300
-                    "
+                    className="inline-flex items-center text-[#C9A84C] text-sm uppercase tracking-[0.15em] font-medium hover:gap-2 transition-all duration-300"
                   >
                     Contact to View Properties →
                   </a>
@@ -216,64 +139,23 @@ export default function Areas() {
         <div className="mt-24 md:mt-32 lg:mt-40">
           <div className="bg-white rounded-3xl border border-[#E7E2D8] p-10 md:p-14 lg:p-20">
             <div className="h-9 lg:h-12"></div>
-
             <div className="flex flex-col items-center justify-center text-center">
-              <h3
-                className="
-                  font-display
-                  text-4xl
-                  md:text-5xl
-                  lg:text-6xl
-                  leading-[1.1]
-                  text-[#0F1923]
-                  mb-8
-                "
-              >
+              <h3 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F1923] mb-8">
                 Why Invest In
                 <span className="italic text-[#C9A84C] block">South Delhi</span>
               </h3>
-
-              <p
-                className="
-                  w-full
-                  max-w-[780px]
-                  mx-auto
-                  text-center
-                  text-lg
-                  md:text-xl
-                  leading-[1.9]
-                  text-[#667085]
-                "
-              >
+              <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#667085]">
                 South Delhi continues to attract homeowners, investors and
                 businesses because of limited supply, premium infrastructure,
                 excellent connectivity and long-term appreciation.
               </p>
             </div>
-
             <div className="h-9 lg:h-12" />
-
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
               {insights.map((item, i) => (
                 <div
                   key={i}
-                  className="
-                    group
-                    h-full
-                    flex
-                    flex-col
-                    text-left
-                    p-10
-                    rounded-2xl
-                    bg-[#FAFAF7]
-                    border
-                    border-[#EEE8DE]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:border-[#C9A84C]/30
-                    hover:shadow-xl
-                  "
+                  className="group h-full flex flex-col text-left p-10 rounded-2xl bg-[#FAFAF7] border border-[#EEE8DE] transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A84C]/30 hover:shadow-xl"
                 >
                   <div className="text-[#C9A84C] text-5xl font-display mb-6">
                     {String(i + 1).padStart(2, "0")}
@@ -287,9 +169,7 @@ export default function Areas() {
                 </div>
               ))}
             </div>
-
-                        <div className="h-12 lg:h-20" />
-
+            <div className="h-12 lg:h-20" />
           </div>
         </div>
       </div>
