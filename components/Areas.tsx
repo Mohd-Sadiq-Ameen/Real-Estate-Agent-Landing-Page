@@ -8,7 +8,7 @@ const areas = [
     props: "200+ Properties",
   },
   {
-    name: "Greater Kailash (GK-1 & GK-2)",
+    name: "Greater Kailash)",
     desc: "Affluent neighbourhood with luxury homes, vibrant markets and excellent connectivity with strong rental demand.",
     img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
     props: "150+ Properties",

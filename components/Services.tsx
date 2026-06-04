@@ -69,8 +69,12 @@ export default function Services() {
         bg-white
       "
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Header – flex centering (already correct) */}
+      {/* Outer container with fixed max-width and auto margins for 1440px+ */}
+      <div
+        className="max-w-[1400px] mx-auto px-6 lg:px-8"
+        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+      >
+        {/* Header */}
         <div className="flex flex-col items-center justify-center text-center">
           <h2
             className="
@@ -104,10 +108,8 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Spacer – responsive */}
         <div className="h-10 md:h-12 lg:h-16" />
 
-        {/* Services grid – responsive gaps */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {services.map((s, i) => (
             <div
@@ -129,7 +131,6 @@ export default function Services() {
                 hover:-translate-y-1
               "
             >
-              {/* Image container */}
               <div className="relative h-56 sm:h-60 md:h-64 overflow-hidden">
                 <Image
                   src={s.img}
@@ -146,7 +147,6 @@ export default function Services() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6 sm:p-7 lg:p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-4 sm:mb-5">
                   <div className="w-10 h-10 border border-[#C9A84C]/40 rounded-md flex items-center justify-center">
@@ -160,9 +160,8 @@ export default function Services() {
                   {s.desc}
                 </p>
 
-                <div className="h-5" ></div>
+                <div className="h-5" />
 
-                {/* CTA button – improved spacing and size */}
                 <div className="mt-6 pt-5 border-t border-[#F1EEE8] flex justify-center">
                   <a
                     href="https://wa.me/919818077956"
@@ -196,8 +195,7 @@ export default function Services() {
           ))}
         </div>
       </div>
-
-      <div className="h-15" ></div>
+      <div className="h-15" />
     </section>
   );
 }

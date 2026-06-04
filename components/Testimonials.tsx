@@ -3,11 +3,9 @@
 import Image from "next/image";
 
 export default function GoogleReviews() {
-  // Google review link – replace with your actual Google Maps review page
   const googleReviewLink =
     "https://www.google.com/maps/place/Royal+Siyaram+estate+-+Renting,+Sale+Purchase+%26+Consultant/@28.5685346,77.2314639,15z/data=!4m12!1m2!2m1!1sreal+estate+agents+near+lajpat+nagar+royal+estate+new+delhi+delhi!3m8!1s0x390ce345e1f00333:0x560bd44b1bf1cdc4!8m2!3d28.5597366!4d77.2433662!9m1!1b1!15sCkFyZWFsIGVzdGF0ZSBhZ2VudHMgbmVhciBsYWpwYXQgbmFnYXIgcm95YWwgZXN0YXRlIG5ldyBkZWxoaSBkZWxoaVpDIkFyZWFsIGVzdGF0ZSBhZ2VudHMgbmVhciBsYWpwYXQgbmFnYXIgcm95YWwgZXN0YXRlIG5ldyBkZWxoaSBkZWxoaZIBHWNvbW1lcmNpYWxfcmVhbF9lc3RhdGVfYWdlbmN54AEA!16s%2Fg%2F11s_tp18r2?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D";
 
-  // Review image filenames (stored in /public folder)
   const reviewImages = [
     { src: "/review1.png", alt: "Google 5-star review from a client" },
     { src: "/review2.png", alt: "Google 5-star review testimonial" },
@@ -16,14 +14,12 @@ export default function GoogleReviews() {
   ];
 
   return (
-    <section
-      id="testimonials"
-      className="py-24 md:py-32 bg-[#FAFAF9] overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header with rating image */}
+    <section id="testimonials" className="py-24 md:py-32 bg-[#FAFAF9] overflow-hidden">
+      <div
+        className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
+        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+      >
         <div className="flex flex-col items-center justify-center text-center">
-          {/* Ratings image (4.9★ / 313 reviews) */}
           <div className="mb-6">
             <Image
               src="/ratings.png"
@@ -33,7 +29,6 @@ export default function GoogleReviews() {
               className="w-auto h-auto"
             />
           </div>
-
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0F172A] font-normal leading-tight mt-4">
             What Our Clients Say{" "}
             <span className="italic">
@@ -45,17 +40,14 @@ export default function GoogleReviews() {
               <span className="text-[#EA4335]">e</span>
             </span>
           </h2>
-
           <p className="w-full max-w-3xl mx-auto text-center text-[#64748B] text-lg md:text-xl leading-relaxed mt-6">
             Real feedback from verified home buyers, sellers and investors who
             trusted us with their property decisions.
           </p>
         </div>
 
-        {/* Spacer between header and grid */}
         <div className="h-12 md:h-16 lg:h-20" />
 
-        {/* Review images grid – responsive: 1 (mobile) → 2 (tablet) → 4 (desktop) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {reviewImages.map((img, idx) => (
             <div
@@ -73,10 +65,8 @@ export default function GoogleReviews() {
           ))}
         </div>
 
-        {/* Spacer before CTA */}
         <div className="h-12 md:h-16" />
 
-        {/* Bottom CTA – leads to Google review page */}
         <div className="text-center">
           <a
             href={googleReviewLink}
@@ -86,30 +76,17 @@ export default function GoogleReviews() {
             style={{ padding: "1rem 2rem" }}
           >
             Read All 300+ Google Reviews
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </a>
         </div>
 
-        <div className="h-5"></div>
-
-        {/* Optional trust line */}
+        <div className="h-5" />
         <div className="mt-12 text-center text-lg text-[#94A3B8]">
           Verified Google reviews • 100% authentic client experiences
         </div>
-
-        <div className="h-5"></div>
+        <div className="h-5" />
       </div>
     </section>
   );

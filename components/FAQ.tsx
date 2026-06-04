@@ -33,42 +33,27 @@ export default function FAQ() {
   };
 
   return (
-    <section
-      className="py-0 bg-[#FAFAF7]"
-      style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Header – perfectly centered */}
-        <div
-          className="flex flex-col items-center justify-center text-center"
-          style={{ marginBottom: "1rem" }}
-        >
-          <p
-            className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.35em] uppercase mb-6"
-            style={{ marginBottom: "1rem" }}
-          >
+    <section className="bg-[#FAFAF7]" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+      <div
+        className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
+        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+      >
+        {/* Header */}
+        <div className="flex flex-col items-center justify-center text-center" style={{ marginBottom: "2rem" }}>
+          <p className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.35em] uppercase" style={{ marginBottom: "1rem" }}>
             Before You Decide
           </p>
-          <h2
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95] mb-8"
-            style={{ marginBottom: "2rem" }}
-          >
+          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95]" style={{ marginBottom: "2rem" }}>
             Common Concerns
           </h2>
-          <p
-            className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467] mb-12 md:mb-16"
-            style={{ marginBottom: "3rem" }}
-          >
+          <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467]">
             Clear answers to the most common questions about buying, selling and renting in South Delhi.
           </p>
         </div>
 
-        {/* FAQ container – flex centered with style */}
+        {/* FAQ cards container – centered */}
         <div className="flex justify-center">
-          <div
-            className="w-full max-w-3xl"
-            style={{ maxWidth: "896px", width: "100%" }}
-          >
+          <div className="w-full max-w-3xl" style={{ maxWidth: "896px", width: "100%" }}>
             {faqs.map((f, i) => (
               <div
                 key={i}
@@ -98,17 +83,11 @@ export default function FAQ() {
 
                 {openIndex === i && (
                   <div className="border-t border-[#F1EEE8]">
-                    <div
-                      className="w-full text-center"
-                      style={{ padding: "2rem 2rem" }}
-                    >
+                    <div className="w-full text-center" style={{ padding: "2rem 2rem" }}>
                       <p className="max-w-[750px] mx-auto text-base md:text-lg leading-[1.9] text-[#6B6258]">
                         {f.a}
                       </p>
-                      <div
-                        className="flex justify-center"
-                        style={{ marginTop: "2rem" }}
-                      >
+                      <div className="flex justify-center" style={{ marginTop: "2rem" }}>
                         <a
                           href="https://wa.me/919818077956"
                           target="_blank"

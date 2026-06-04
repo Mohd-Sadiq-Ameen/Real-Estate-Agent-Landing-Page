@@ -66,78 +66,92 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 lg:py-7 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="flex items-center gap-4 cursor-pointer">
-          <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
-            <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">
-              RS
-            </span>
-          </div>
-          <div>
-            <div className="text-white text-xl xl:text-3xl font-semibold leading-tight">
-              Royal Siyaram
+      {/* Main Navbar – improved for 1440px+ centering */}
+      <div
+        className="max-w-7xl mx-auto px-6 lg:px-10 py-6 lg:py-7"
+        style={{
+          width: "100%",
+          maxWidth: "1400px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <div className="flex items-center justify-between gap-4 flex-nowrap">
+          {/* Logo (left) */}
+          <a
+            href="#home"
+            onClick={(e) => handleScroll(e, "#home")}
+            className="flex items-center gap-4 cursor-pointer flex-shrink-0"
+          >
+            <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
+              <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">
+                RS
+              </span>
             </div>
-            <div className="text-[#C9A84C] text-xs lg:text-sm tracking-[0.3em] uppercase">
-              Estate
+            <div>
+              <div className="text-white text-xl xl:text-3xl font-semibold leading-tight whitespace-nowrap">
+                Royal Siyaram
+              </div>
+              <div className="text-[#C9A84C] text-xs lg:text-sm tracking-[0.3em] uppercase whitespace-nowrap">
+                Estate
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-12">
-          {links.map((link) => (
+          {/* Desktop Navigation (center) – prevents wrapping */}
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-10 flex-nowrap">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleScroll(e, link.href)}
+                className="text-white/85 hover:text-[#C9A84C] text-sm xl:text-base transition-colors duration-300 whitespace-nowrap"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Social Icons (right) – fixed width to avoid shifting */}
+          <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
             <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleScroll(e, link.href)}
-              className="text-white/85 hover:text-[#C9A84C] text-sm xl:text-base transition-colors duration-300"
+              href="https://www.instagram.com/royal_siyaram_consultant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#E4405F] transition-colors duration-300 hover:scale-110 transform"
             >
-              {link.name}
+              <FaInstagram size={24} />
             </a>
-          ))}
-        </div>
+            <a
+              href="https://www.facebook.com/profile.php?id=61583034280331"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#1877F2] transition-colors duration-300 hover:scale-110 transform"
+            >
+              <FaFacebook size={24} />
+            </a>
+            <a
+              href="https://www.youtube.com/@royalsiyaramestate/featured"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#FF0000] transition-colors duration-300 hover:scale-110 transform"
+            >
+              <FaYoutube size={26} />
+            </a>
+          </div>
 
-        {/* Desktop (lg+): Only social icons – no WhatsApp button */}
-        <div className="hidden lg:flex items-center gap-5">
-          <a
-            href="https://www.instagram.com/royal_siyaram_consultant"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#E4405F] transition-colors duration-300 hover:scale-110 transform"
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-white"
+            aria-label="Toggle Menu"
           >
-            <FaInstagram size={24} />
-          </a>
-          <a
-            href="https://www.facebook.com/profile.php?id=61583034280331"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#1877F2] transition-colors duration-300 hover:scale-110 transform"
-          >
-            <FaFacebook size={24} />
-          </a>
-          <a
-            href="https://www.youtube.com/@royalsiyaramestate/featured"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#FF0000] transition-colors duration-300 hover:scale-110 transform"
-          >
-            <FaYoutube size={26} />
-          </a>
+            {open ? <X size={34} /> : <Menu size={34} />}
+          </button>
         </div>
-
-        {/* Mobile Menu Button (visible on all screens below lg) */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-white"
-          aria-label="Toggle Menu"
-        >
-          {open ? <X size={34} /> : <Menu size={34} />}
-        </button>
       </div>
 
-      {/* Mobile / Tablet Dropdown Menu (visible when open) */}
+      {/* Mobile / Tablet Dropdown Menu */}
       {open && (
         <div className="lg:hidden bg-[#0F1923] border-t border-white/10 px-6 py-8 flex flex-col gap-6">
           {links.map((link) => (
@@ -150,7 +164,6 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          {/* Social Icons in dropdown */}
           <div className="flex justify-center gap-6 py-4 border-b border-white/10">
             <a
               href="https://www.instagram.com/royal_siyaram_consultant"
@@ -177,7 +190,6 @@ export default function Navbar() {
               <FaYoutube size={30} />
             </a>
           </div>
-          {/* WhatsApp CTA in dropdown */}
           <a
             href="https://wa.me/919818077956"
             target="_blank"

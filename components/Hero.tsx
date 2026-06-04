@@ -22,14 +22,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/60 via-transparent to-transparent" />
       </div>
 
-      {/* Content container – fully centered */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Spacer above heading – responsive */}
+      {/* Content container – fixed width and auto margins for 1440px+ */}
+      <div
+        className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        style={{ maxWidth: "1400px" }}
+      >
         <div className="h-20 sm:h-10 lg:h-12" />
-
         <div className="md:h-15 lg:h-10"></div>
 
-        {/* Heading */}
         <h1
           className="
             font-display
@@ -44,26 +44,26 @@ export default function Hero() {
           </span>
         </h1>
 
-        {/* Description */}
-        <p
-          className="
-            text-white/75
-            text-base sm:text-lg md:text-xl lg:text-2xl
-            max-w-4xl lg:max-w-5xl mx-auto
-            leading-relaxed
-            px-2 sm:px-4
-          "
-        >
-          Buy, sell, rent and invest in premium builder floors and commercial
-          spaces with trusted local expertise.
-        </p>
+        {/* Description – wrapped in flex to force centering */}
+        <div className="flex justify-center w-full">
+          <p
+            className="
+              text-white/75
+              text-base sm:text-lg md:text-xl lg:text-2xl
+              max-w-4xl lg:max-w-5xl
+              leading-relaxed
+              px-2 sm:px-4
+            "
+            style={{ textAlign: "center" }}
+          >
+            Buy, sell, rent and invest in premium builder floors and commercial
+            spaces with trusted local expertise.
+          </p>
+        </div>
 
-        {/* Spacer above buttons */}
         <div className="h-8 lg:h-10" />
 
-        {/* Buttons – perfectly aligned */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
-          {/* WhatsApp Button */}
           <a
             href="https://wa.me/919818077956"
             target="_blank"
@@ -92,8 +92,6 @@ export default function Hero() {
             WhatsApp Now
             <ArrowRight size={18} />
           </a>
-
-          {/* Call Button */}
           <a
             href="tel:+919818077956"
             className="
@@ -113,10 +111,8 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Spacer between buttons and stats */}
         <div className="h-8 lg:h-10" />
 
-        {/* Stats – perfectly centered */}
         <div className="flex justify-center w-full">
           <div className="grid grid-cols-3 gap-8 sm:gap-12 w-full max-w-md">
             {[
@@ -136,11 +132,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Spacer below stats (optional) */}
         <div className="h-4" />
       </div>
 
-      {/* Scroll indicator */}
       <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center text-white/40">
         <span className="text-xs uppercase tracking-widest">Scroll</span>
         <ChevronDown className="animate-bounce" size={14} />

@@ -29,12 +29,13 @@ export default function About() {
     <section
       id="about"
       className="relative w-full overflow-hidden bg-[#0F1923] pt-28 md:pt-36 lg:pt-44 pb-40 md:pb-48 lg:pb-56"
-      style={{
-        paddingTop: "3rem",      // fallback for pt-28
-        paddingBottom: "3rem",  // fallback for pb-40
-      }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="h-8"></div>
+
+      <div
+        className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
+        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+      >
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-28 items-center">
           {/* LEFT IMAGE */}
           <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
@@ -48,9 +49,11 @@ export default function About() {
 
           {/* RIGHT CONTENT */}
           <div className="max-w-[620px] mx-auto lg:mx-0">
-            <p className="text-[#C9A84C] uppercase tracking-[0.3em] text-xs font-medium mb-8">
+            <p className="text-[#C9A84C] uppercase tracking-[0.3em] text-base font-medium mb-8">
               About Royal Siyaram Estate
             </p>
+
+                  <div className="h-2"></div>
 
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] mb-14">
               South Delhi's Trusted
@@ -58,22 +61,18 @@ export default function About() {
                 Estate Partner
               </span>
             </h2>
-
             <p className="text-white/75 text-lg md:text-xl leading-[2] mb-10">
               For over two decades, Royal Siyaram Estate has helped buyers,
               sellers, investors and tenants make confident property decisions
               across South Delhi's most desirable neighbourhoods.
             </p>
-
             <p className="text-white/60 text-lg md:text-xl leading-[2] mb-20">
               From luxury builder floors and independent homes to commercial
               investments, we combine local expertise, market knowledge and
               transparent guidance to deliver exceptional results.
             </p>
-
             <div className="w-24 h-px bg-[#C9A84C]/25 mb-20" />
 
-            {/* STATS */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center sm:text-left">
@@ -87,7 +86,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* FEATURES */}
             <div className="space-y-8 mb-12">
               {features.map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
@@ -99,7 +97,8 @@ export default function About() {
               ))}
             </div>
 
-            {/* BUTTON */}
+            <div className="h-8"></div>
+
             <div className="flex justify-start">
               <button
                 onClick={scrollToVideo}
@@ -107,14 +106,25 @@ export default function About() {
                 style={{ padding: "1rem 2rem" }}
               >
                 Contact to View Properties
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </button>
             </div>
           </div>
         </div>
       </div>
+      <div className="h-8"></div>
     </section>
   );
 }
