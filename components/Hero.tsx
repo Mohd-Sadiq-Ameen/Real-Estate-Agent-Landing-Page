@@ -28,7 +28,7 @@ export default function Hero() {
         style={{ maxWidth: "1400px" }}
       >
         <div className="h-20 sm:h-10 lg:h-12" />
-        <div className="md:h-15 lg:h-10"></div>
+        <div className="md:h-15 lg:h-18"></div>
 
         <h1
           className="
