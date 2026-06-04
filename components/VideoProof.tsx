@@ -80,10 +80,15 @@ export default function VideoProof() {
               </video>
             </div>
             <div className="text-center mt-6">
-              <h3 className="text-2xl font-semibold text-[#0F1923]">
+              <div className="h-5"></div>
+
+              <h3 className="text-3xl font-semibold text-[#0F1923]">
                 {video.title}
               </h3>
-              <p className="text-[#6B6258] mt-2">{video.description}</p>
+              <p className="text-[#6B6258] text-xl mt-2 mb-2">
+                {video.description}
+              </p>
+              <div className="h-5"></div>
             </div>
           </div>
 
@@ -106,18 +111,26 @@ export default function VideoProof() {
         </div>
 
         {/* DOTS */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-3 mt-8">
           {videos.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-[#C9A84C]" : "w-2 bg-gray-300"
-              }`}
+              className={`
+        rounded-full transition-all
+        h-3 sm:h-4 md:h-5 lg:h-6
+        ${
+          i === index
+            ? "w-8 sm:w-10 md:w-12 lg:w-14 bg-[#C9A84C]"
+            : "w-3 sm:w-4 md:w-5 lg:w-6 bg-gray-300"
+        }
+      `}
             />
           ))}
         </div>
       </div>
+
+      <div className="h-15 md:h-20 lg:"></div>
     </section>
   );
 }

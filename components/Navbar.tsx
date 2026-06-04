@@ -2,6 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaYoutube,
+} from "react-icons/fa";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,18 +27,13 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Smooth scroll handler with offset for fixed navbar
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
-      const navbarHeight = 100; // adjust to your actual navbar height
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
+      const navbarHeight = 120;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navbarHeight,
         behavior: "smooth",
@@ -50,28 +50,26 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* Top Contact Bar */}
-      <div className="bg-[#C9A84C] text-[#0F1923] py-4 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 text-base md:text-lg font-semibold tracking-wide">
-          <Phone size={20} />
-          <span>Call Now:</span>
-          <a
-            href="tel:+919818077956"
-            className="font-bold text-lg md:text-xl hover:underline"
-          >
-            +91 98180 77956
-          </a>
+      {/* Top Contact Bar – only phone number */}
+      <div className="bg-[#C9A84C] text-[#0F1923] py-3 md:py-4 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
+          <div className="flex items-center gap-2 text-sm md:text-base font-semibold tracking-wide">
+            <Phone size={16} className="md:w-5 md:h-5" />
+            <span>Call Now:</span>
+            <a
+              href="tel:+919818077956"
+              className="font-bold text-sm md:text-lg hover:underline"
+            >
+              +91 98180 77956
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 lg:py-7 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleScroll(e, "#home")}
-          className="flex items-center gap-4 cursor-pointer"
-        >
+        <a href="#home" onClick={(e) => handleScroll(e, "#home")} className="flex items-center gap-4 cursor-pointer">
           <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
             <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">
               RS
@@ -101,18 +99,35 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <a
-          href="https://wa.me/919818077956"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:flex items-center gap-2 border border-[#C9A84C] text-[#C9A84C] px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-[#C9A84C] hover:text-[#0F1923] transition-all duration-300"
-        >
-          <Phone size={18} />
-          WhatsApp
-        </a>
+        {/* Desktop (lg+): Only social icons – no WhatsApp button */}
+        <div className="hidden lg:flex items-center gap-5">
+          <a
+            href="https://www.instagram.com/royal_siyaram_consultant"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#E4405F] transition-colors duration-300 hover:scale-110 transform"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61583034280331"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#1877F2] transition-colors duration-300 hover:scale-110 transform"
+          >
+            <FaFacebook size={24} />
+          </a>
+          <a
+            href="https://www.youtube.com/@royalsiyaramestate/featured"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#FF0000] transition-colors duration-300 hover:scale-110 transform"
+          >
+            <FaYoutube size={26} />
+          </a>
+        </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (visible on all screens below lg) */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden text-white"
@@ -122,7 +137,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile / Tablet Dropdown Menu (visible when open) */}
       {open && (
         <div className="lg:hidden bg-[#0F1923] border-t border-white/10 px-6 py-8 flex flex-col gap-6">
           {links.map((link) => (
@@ -135,11 +150,39 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          {/* Social Icons in dropdown */}
+          <div className="flex justify-center gap-6 py-4 border-b border-white/10">
+            <a
+              href="https://www.instagram.com/royal_siyaram_consultant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#E4405F] transition-colors"
+            >
+              <FaInstagram size={28} />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61583034280331"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#1877F2] transition-colors"
+            >
+              <FaFacebook size={28} />
+            </a>
+            <a
+              href="https://www.youtube.com/@royalsiyaramestate/featured"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#FF0000] transition-colors"
+            >
+              <FaYoutube size={30} />
+            </a>
+          </div>
+          {/* WhatsApp CTA in dropdown */}
           <a
             href="https://wa.me/919818077956"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 bg-[#C9A84C] text-[#0F1923] text-center py-4 text-lg font-bold uppercase tracking-wider"
+            className="mt-2 bg-[#C9A84C] text-[#0F1923] text-center py-4 text-lg font-bold uppercase tracking-wider"
           >
             WhatsApp Us
           </a>
