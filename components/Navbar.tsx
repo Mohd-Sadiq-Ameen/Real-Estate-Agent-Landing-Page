@@ -50,9 +50,12 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      {/* Top Contact Bar – only phone number */}
+      {/* Top Contact Bar – now uses same max-width as main navbar */}
       <div className="bg-[#C9A84C] text-[#0F1923] py-3 md:py-4 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-center">
+        <div
+          className="w-full max-w-[1400px] mx-auto flex items-center justify-center"
+          style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+        >
           <div className="flex items-center gap-2 text-sm md:text-base font-semibold tracking-wide">
             <Phone size={16} className="md:w-5 md:h-5" />
             <span>Call Now:</span>
@@ -66,27 +69,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar – improved for 1440px+ centering */}
+      {/* Main Navbar */}
       <div
-        className="max-w-7xl mx-auto px-6 lg:px-10 py-6 lg:py-7"
-        style={{
-          width: "100%",
-          maxWidth: "1400px",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
+        className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-6 lg:py-7"
+        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         <div className="flex items-center justify-between gap-4 flex-nowrap">
-          {/* Logo (left) */}
+          {/* Logo */}
           <a
             href="#home"
             onClick={(e) => handleScroll(e, "#home")}
             className="flex items-center gap-4 cursor-pointer flex-shrink-0"
           >
             <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
-              <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">
-                RS
-              </span>
+              <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">RS</span>
             </div>
             <div>
               <div className="text-white text-xl xl:text-3xl font-semibold leading-tight whitespace-nowrap">
@@ -98,7 +94,7 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* Desktop Navigation (center) – prevents wrapping */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-10 flex-nowrap">
             {links.map((link) => (
               <a
@@ -112,7 +108,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Social Icons (right) – fixed width to avoid shifting */}
+          {/* Social Icons */}
           <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
             <a
               href="https://www.instagram.com/royal_siyaram_consultant"
@@ -151,7 +147,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile / Tablet Dropdown Menu */}
+      {/* Mobile Dropdown Menu */}
       {open && (
         <div className="lg:hidden bg-[#0F1923] border-t border-white/10 px-6 py-8 flex flex-col gap-6">
           {links.map((link) => (
