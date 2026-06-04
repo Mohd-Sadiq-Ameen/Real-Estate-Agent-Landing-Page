@@ -86,12 +86,16 @@ export default function Areas() {
           <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95] mb-8">
             Popular <span className="italic text-[#C9A84C]">Areas</span>
           </h2>
+                  <div className="h-5" ></div>
+
           <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467] mb-20 md:mb-24 lg:mb-32">
             Explore South Delhi's most desirable neighbourhoods where luxury
             living, premium infrastructure and long-term investment potential
             come together.
           </p>
         </div>
+
+        <div className="h-15" ></div>
 
         {/* Area Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-10">

@@ -27,8 +27,8 @@ export default function Hero() {
         className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ maxWidth: "1400px" }}
       >
-        <div className="h-20 sm:h-10 lg:h-12" />
-        <div className="md:h-15 lg:h-18"></div>
+        <div className="h-40 sm:h-10 md:h-32 lg:h-12" />
+        <div className="md:h-20 lg:h-18"></div>
 
         <h1
           className="

@@ -24,7 +24,6 @@ export default function Home() {
       <VideoProof />
 
       <About />
-      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <Areas />
 
