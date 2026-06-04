@@ -33,85 +33,97 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-28 bg-[#FAFAF7]">
+    <section
+      className="py-0 bg-[#FAFAF7]"
+      style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Header – centered (unchanged) */}
-        <div className="flex flex-col items-center justify-center text-center">
-          <p className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.35em] uppercase mb-6">
+        {/* Header – perfectly centered */}
+        <div
+          className="flex flex-col items-center justify-center text-center"
+          style={{ marginBottom: "1rem" }}
+        >
+          <p
+            className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.35em] uppercase mb-6"
+            style={{ marginBottom: "1rem" }}
+          >
             Before You Decide
           </p>
           <h2
-            className="
-              font-display
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              text-[#0F1923]
-              font-normal
-              leading-[0.95]
-              mb-8
-            "
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95] mb-8"
+            style={{ marginBottom: "2rem" }}
           >
             Common Concerns
           </h2>
           <p
-            className="
-              w-full
-              max-w-[780px]
-              mx-auto
-              text-center
-              text-lg
-              md:text-xl
-              leading-[1.9]
-              text-[#475467]
-              mb-12
-              md:mb-16
-            "
+            className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467] mb-12 md:mb-16"
+            style={{ marginBottom: "3rem" }}
           >
             Clear answers to the most common questions about buying, selling and renting in South Delhi.
           </p>
         </div>
 
-        {/* FAQ accordion – left-aligned with small left margin */}
-        <div className="max-w-[780px] mx-auto space-y-4">
-          {faqs.map((f, i) => (
-            <div
-              key={i}
-              className={`border bg-white transition ${
-                openIndex === i ? "border-[#C9A84C]/40 shadow-sm" : "border-gray-100"
-              }`}
-            >
-              <button
-                onClick={() => toggleFAQ(i)}
-                className="w-full p-5 sm:p-6 flex justify-between items-center gap-3"
-                aria-expanded={openIndex === i}
+        {/* FAQ container – flex centered with style */}
+        <div className="flex justify-center">
+          <div
+            className="w-full max-w-3xl"
+            style={{ maxWidth: "896px", width: "100%" }}
+          >
+            {faqs.map((f, i) => (
+              <div
+                key={i}
+                className={`
+                  mb-6 rounded-3xl bg-white border transition-all duration-300
+                  ${openIndex === i
+                    ? "border-[#C9A84C]/30 shadow-lg"
+                    : "border-[#ECE8E1]"
+                  }
+                `}
+                style={{ marginBottom: "1.5rem" }}
               >
-                <span className="text-base sm:text-lg font-medium text-[#0F1923] text-left">
-                  {f.q}
-                </span>
-                <span className="text-[#C9A84C] text-2xl sm:text-3xl font-light shrink-0">
-                  {openIndex === i ? "−" : "+"}
-                </span>
-              </button>
-
-              {openIndex === i && (
-                <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm sm:text-base text-[#6B6258] leading-relaxed border-t pt-4 text-left">
-                  {f.a}
-                  <div className="mt-5">
-                    <a
-                      href="https://wa.me/919818077956"
-                      target="_blank"
-                      rel="noopener"
-                      className="text-xs sm:text-sm uppercase tracking-wider text-[#C9A84C] font-semibold hover:underline"
-                    >
-                      Ask about your situation →
-                    </a>
+                <button
+                  onClick={() => toggleFAQ(i)}
+                  className="w-full text-center"
+                  style={{ padding: "2rem 2.5rem" }}
+                >
+                  <div className="flex justify-center items-center gap-4">
+                    <h3 className="max-w-[750px] text-lg md:text-xl font-medium text-[#0F1923] leading-relaxed">
+                      {f.q}
+                    </h3>
+                    <span className="text-[#C9A84C] text-3xl leading-none">
+                      {openIndex === i ? "−" : "+"}
+                    </span>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                </button>
+
+                {openIndex === i && (
+                  <div className="border-t border-[#F1EEE8]">
+                    <div
+                      className="w-full text-center"
+                      style={{ padding: "2rem 2rem" }}
+                    >
+                      <p className="max-w-[750px] mx-auto text-base md:text-lg leading-[1.9] text-[#6B6258]">
+                        {f.a}
+                      </p>
+                      <div
+                        className="flex justify-center"
+                        style={{ marginTop: "2rem" }}
+                      >
+                        <a
+                          href="https://wa.me/919818077956"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm uppercase tracking-[0.2em] text-[#C9A84C] font-semibold hover:underline"
+                        >
+                          Ask About Your Situation →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

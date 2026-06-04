@@ -16,31 +16,30 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <div className="h-10 md:h-16 lg:h-18" />
+      <div className="bg-white h-10 md:h-16 lg:h-18" />
 
       <Services />
-      <div className="h-10 md:h-16 lg:h-28" />
+      <div className="bg-white h-5 md:h-10 lg:h-15" />
 
       <VideoProof />
-      <div className="h-8 md:h-12 lg:h-16" />
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <About />
-      <div className="h-8 md:h-12 lg:h-16" />
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <Areas />
-      <div className="h-8 md:h-12 lg:h-16" />
 
       <CTABanner />
-      <div className="h-8 md:h-12 lg:h-16" />
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <Testimonials />
-      <div className="h-8 md:h-12 lg:h-16" />
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <FAQ />
-      <div className="h-8 md:h-12 lg:h-16" />
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <Contact />
-      <div className="h-6 md:h-9 lg:h-10" />
+      <div className="bg-white h-6 md:h-9 lg:h-10" />
 
       <Footer />
 

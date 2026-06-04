@@ -22,14 +22,7 @@ export default function Footer() {
             South Delhi's trusted estate agents for residential, rental and commercial properties. Serving buyers, sellers and tenants with integrity and expertise.
           </p>
           <div className="flex gap-3">
-            <a
-              href="https://wa.me/919818077956"
-              target="_blank"
-              rel="noopener"
-              className="text-xs bg-[#C9A84C] text-[#0F1923] px-5 py-2.5 font-semibold uppercase tracking-wider hover:bg-[#E8C96A] transition-colors flex items-center gap-2"
-            >
-              WhatsApp <ArrowRight size={12} />
-            </a>
+            
           </div>
         </div>
 
@@ -58,7 +51,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact – now with larger text */}
+        {/* Contact – larger text and improved spacing */}
         <div>
           <h4 className="text-white font-semibold text-sm tracking-widest uppercase mb-5">Contact</h4>
           <div className="space-y-5">
@@ -98,6 +91,30 @@ export default function Footer() {
           <p className="text-white/30 text-xs">Renting · Sale · Purchase · Consultation</p>
         </div>
       </div>
+
+      {/* Guaranteed spacing inline styles (as fallback) */}
+      <style>{`
+        footer .max-w-7xl {
+          width: 100%;
+          max-width: 1280px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+        @media (min-width: 768px) {
+          footer .max-w-7xl {
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+        @media (min-width: 1024px) {
+          footer .max-w-7xl {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

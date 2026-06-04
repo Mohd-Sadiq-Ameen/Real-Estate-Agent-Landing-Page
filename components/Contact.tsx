@@ -1,106 +1,179 @@
-import { Phone } from "lucide-react";
+"use client";
 
-export default function Contact() {
+import { useState } from "react";
+
+export default function CTABanner() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    budget: "",
+    area: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const message = `
+🏡 New High-Intent Property Lead
+
+Name: ${form.name}
+Phone: ${form.phone}
+Budget: ${form.budget}
+Area: ${form.area}
+
+Source: Website CTA
+`;
+
+    const url = `https://wa.me/919818077956?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
-    <section id="contact" className="py-28 bg-[#F5F0E8]">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-        {/* Single column, but content is centered via flex */}
-        <div className="flex flex-col items-center gap-12">
-          {/* Header – promise + trust bullets */}
-          <div className="text-center max-w-3xl">
-            <h2
-              className="
-                font-display
-                text-5xl
-                sm:text-6xl
-                md:text-7xl
-                lg:text-7xl
-                text-[#0F1923]
-                font-normal
-                leading-[1.1]
-                mb-6
-              "
-            >
-              Get Verified Properties <br />
-              <span className="text-[#C9A84C] italic">Within Hours</span>
-            </h2>
+    <section id="contact" className="relative py-28 md:py-36 bg-[#FAFAF9] overflow-hidden">
+      {/* background pattern */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,#C9A84C_1px,transparent_0)] bg-[length:28px_28px]" />
 
-            <div className="space-y-2 text-sm text-[#0F1923] text-center">
-              <p>✔ Verified listings</p>
-              <p>✔ No spam</p>
-              <p>✔ Fast response</p>
-            </div>
-          </div>
-
-          {/* DECISION CARD – perfectly centered */}
-          <div
-            className="
-              bg-[#0F1923]
-              p-10
-              flex flex-col
-              gap-5
-              justify-center
-              max-w-xl
-              rounded-2xl
-              shadow-xl
-              border
-              border-white/10
-              w-full
-            "
-          >
-            {/* WhatsApp Button */}
-            <a
-              href="https://wa.me/919818077956"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                flex items-center justify-center gap-4
-                bg-[#25D366] text-white
-                px-8 sm:px-10 md:px-12
-                py-6 md:py-7
-                font-bold tracking-wider
-                text-base sm:text-lg md:text-xl
-                uppercase
-                hover:bg-[#20B859] transition-all duration-300
-                rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5
-              "
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="shrink-0"
-              >
-                <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.53 0 .2 5.34.2 11.88c0 2.08.54 4.1 1.56 5.9L0 24l6.42-1.68a11.9 11.9 0 0 0 5.64 1.44h.01c6.53 0 11.86-5.34 11.86-11.88 0-3.17-1.23-6.15-3.41-8.4ZM12.07 21.7h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.81 1 1.02-3.71-.24-.38a9.86 9.86 0 0 1-1.52-5.23C2.11 6.6 6.54 2.18 12.06 2.18c2.63 0 5.1 1.03 6.95 2.9a9.74 9.74 0 0 1 2.9 6.96c0 5.52-4.42 9.66-9.84 9.66Zm5.43-7.43c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.67-1.62-.92-2.23-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.1 4.5.7.3 1.25.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z" />
-              </svg>
-              Get Listings on WhatsApp
-            </a>
-
-            {/* Call Button */}
-            <a
-              href="tel:+919818077956"
-              className="
-                flex items-center justify-center gap-4
-                border-2 border-white/30 text-white
-                px-8 sm:px-10 md:px-12
-                py-6 md:py-7
-                font-bold tracking-wider
-                text-base sm:text-lg md:text-xl
-                uppercase
-                hover:bg-white/10 hover:border-[#C9A84C] transition-all duration-300
-                rounded-xl
-              "
-            >
-              <Phone size={24} />
-              Talk to Expert
-            </a>
-
-            <p className="text-white/40 text-xs text-center mt-2">
-              Response within 15–45 minutes
-            </p>
-          </div>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        {/* HEADER BLOCK - perfectly centered like FAQ */}
+        <div className="flex flex-col items-center justify-center text-center mb-16 md:mb-20">
+          <h2 className="font-display text-5xl md:text-7xl text-[#0F172A] leading-[1.05]">
+            Get Exclusive Property Deals
+            <span className="block text-[#B0892A] italic mt-3">
+              Before They Hit Market
+            </span>
+          </h2>
+          <p className="w-full max-w-[780px] mx-auto text-center text-[#64748B] text-lg md:text-xl leading-relaxed mt-6">
+            Tell us your requirement and get{" "}
+            <b>pre-verified South Delhi properties</b> directly on WhatsApp —
+            faster than brokers & portals.
+          </p>
         </div>
+
+        <div className="h-10 sm:h-10 md:h-10 lg:h-10"></div>
+
+        {/* FORM WRAPPER - CENTERED */}
+        <div className="flex justify-center">
+          <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-12 md:space-y-14">
+            {/* NAME + PHONE */}
+            <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+              <div>
+                <label className="block text-lg font-medium text-[#0F172A] mb-3">
+                  Full Name
+                </label>
+                <input
+                  name="name"
+                  placeholder="Enter your name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="w-full h-14 px-4 rounded-xl bg-[#FAFAFA] border border-[#E5E7EB] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] outline-none transition"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-lg font-medium text-[#0F172A] mb-3">
+                  Mobile Number
+                </label>
+                <input
+                  name="phone"
+                  placeholder="Active Mobile Number"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="w-full h-14 px-4 rounded-xl bg-[#FAFAFA] border border-[#E5E7EB] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] outline-none transition"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="h-8 md:h-10"></div>
+
+            {/* BUDGET + AREA - now with custom input + datalist */}
+            <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+              <div>
+                <label className="block text-lg font-medium text-[#0F172A] mb-3">
+                  Budget Range
+                </label>
+                <input
+                  name="budget"
+                  list="budgetOptions"
+                  placeholder="Select or type budget"
+                  value={form.budget}
+                  onChange={handleChange}
+                  className="w-full h-14 px-4 rounded-xl bg-[#FAFAFA] border border-[#E5E7EB] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] outline-none transition"
+                  required
+                />
+                <datalist id="budgetOptions">
+                  <option value="Less than 50 Lakhs" />
+                  <option value="50 Lakhs – 1 Crore" />
+                  <option value="1 Crore – 3 Crores" />
+                  <option value="3 Crores+" />
+                </datalist>
+              </div>
+
+              <div>
+                <label className="block text-lg font-medium text-[#0F172A] mb-3">
+                  Preferred Location
+                </label>
+                <input
+                  name="area"
+                  list="areaOptions"
+                  placeholder="Select or type location"
+                  value={form.area}
+                  onChange={handleChange}
+                  className="w-full h-14 px-4 rounded-xl bg-[#FAFAFA] border border-[#E5E7EB] text-[#0F172A] placeholder-[#94A3B8] focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] outline-none transition"
+                  required
+                />
+                <datalist id="areaOptions">
+                  <option value="Defence Colony" />
+                  <option value="Greater Kailash I/II" />
+                  <option value="Lajpat Nagar" />
+                  <option value="New Friends Colony" />
+                  <option value="South Extension" />
+                  <option value="Saket" />
+                  <option value="Vasant Kunj" />
+                </datalist>
+              </div>
+            </div>
+
+            <div className="h-8 md:h-10"></div>
+
+            {/* CTA */}
+            <div className="pt-4 space-y-5">
+              <button
+                type="submit"
+                className="w-full bg-[#25D366] text-white font-semibold py-5 lg:h-10 rounded-xl text-lg hover:bg-[#1fb85a] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+              >
+                Send Me Matching Properties →
+              </button>
+
+              <div className="h-2 sm:h-3 md:h-4 lg:h-5"></div>
+
+              <a
+                href="https://wa.me/919818077956"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center bg-[#C9A84C] text-white font-semibold py-5 lg:h-10 rounded-xl text-lg hover:bg-[#b8933f] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+              >
+                Prefer Direct Chat? Tap Here
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div className="h-2 sm:h-3 md:h-4 lg:h-5"></div>
+
+        {/* TRUST FOOTER */}
+        <div className="text-center mt-16 md:mt-20 text-sm md:text-base text-[#94A3B8]">
+          No spam • Only verified properties • Response time: under 10 minutes
+        </div>
+
+        <div className="h-6 sm:h-6 md:h-8 lg:h-5"></div>
       </div>
     </section>
   );

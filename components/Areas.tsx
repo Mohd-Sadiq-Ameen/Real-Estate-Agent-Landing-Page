@@ -50,17 +50,28 @@ export default function Areas() {
   return (
     <section
       id="areas"
-      className="
-        pt-28
-        md:pt-36
-        lg:pt-44
-        pb-24
-        md:pb-32
-        lg:pb-40
-        bg-[#F5F0E8]
-        overflow-hidden
-      "
+      className="bg-[#F5F0E8] overflow-hidden"
+      style={{
+        paddingTop: "3rem", // pt-12 (48px)
+        paddingBottom: "3rem", // pb-12 (48px)
+      }}
     >
+      {/* Responsive padding overrides (optional – slightly more on larger screens but still modest) */}
+      <style>{`
+        @media (min-width: 768px) {
+          #areas {
+            padding-top: 4rem !important;    /* 64px */
+            padding-bottom: 4rem !important;
+          }
+        }
+        @media (min-width: 1024px) {
+          #areas {
+            padding-top: 5rem !important;    /* 80px */
+            padding-bottom: 5rem !important;
+          }
+        }
+      `}</style>
+
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center">
@@ -191,7 +202,7 @@ export default function Areas() {
                       duration-300
                     "
                   >
-                    View Properties →
+                    Contact to View Properties →
                   </a>
                 </div>
               </div>
@@ -201,10 +212,11 @@ export default function Areas() {
 
         <div className="h-12"></div>
 
-        {/* Investment Section – heading + description now perfectly centered */}
+        {/* Investment Section */}
         <div className="mt-24 md:mt-32 lg:mt-40">
           <div className="bg-white rounded-3xl border border-[#E7E2D8] p-10 md:p-14 lg:p-20">
-            {/* Centered wrapper – forces perfect alignment at all breakpoints */}
+            <div className="h-9 lg:h-12"></div>
+
             <div className="flex flex-col items-center justify-center text-center">
               <h3
                 className="
@@ -239,7 +251,7 @@ export default function Areas() {
               </p>
             </div>
 
-            <div className="h-16 md:h-20" />
+            <div className="h-9 lg:h-12" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
               {insights.map((item, i) => (
@@ -275,6 +287,9 @@ export default function Areas() {
                 </div>
               ))}
             </div>
+
+                        <div className="h-12 lg:h-20" />
+
           </div>
         </div>
       </div>

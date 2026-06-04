@@ -20,7 +20,7 @@ export default function About() {
   const scrollToVideo = () => {
     const target = document.getElementById("video-proof");
     if (!target) return;
-    const offset = 100; // navbar height approx
+    const offset = 100;
     const top = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
   };
@@ -28,22 +28,19 @@ export default function About() {
   return (
     <section
       id="about"
-      className="
-        relative w-full overflow-hidden
-        bg-[#0F1923]
-        pt-28 md:pt-36 lg:pt-44
-        pb-40 md:pb-48 lg:pb-56
-      "
+      className="relative w-full overflow-hidden bg-[#0F1923] pt-28 md:pt-36 lg:pt-44 pb-40 md:pb-48 lg:pb-56"
+      style={{
+        paddingTop: "3rem",      // fallback for pt-28
+        paddingBottom: "3rem",  // fallback for pb-40
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-28 items-center">
           {/* LEFT IMAGE */}
           <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-            <Image
+            <img
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
               alt="Luxury Property South Delhi"
-              width={1200}
-              height={800}
               className="w-full h-[350px] md:h-[500px] lg:h-[620px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
             <div className="absolute inset-0 rounded-2xl border border-[#C9A84C]/20 pointer-events-none" />
@@ -55,7 +52,7 @@ export default function About() {
               About Royal Siyaram Estate
             </p>
 
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] text-white mb-14">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] mb-14">
               South Delhi's Trusted
               <span className="italic text-[#C9A84C] block mt-2">
                 Estate Partner
@@ -102,37 +99,16 @@ export default function About() {
               ))}
             </div>
 
-            {/* BUTTON – pure JS scroll, no anchor */}
+            {/* BUTTON */}
             <div className="flex justify-start">
               <button
                 onClick={scrollToVideo}
-                className="
-                  inline-flex items-center gap-3
-                  bg-[#C9A84C] hover:bg-[#D7B85D]
-                  text-[#0F1923]
-                  px-8 py-4
-                  rounded-lg
-                  font-semibold
-                  uppercase
-                  tracking-wider
-                  text-sm
-                  transition-all duration-300
-                  shadow-md hover:shadow-lg
-                "
+                className="inline-flex items-center gap-3 bg-[#C9A84C] hover:bg-[#D7B85D] text-[#0F1923] px-8 py-4 rounded-lg font-semibold uppercase tracking-wider text-sm transition-all duration-300 shadow-md hover:shadow-lg"
+                style={{ padding: "1rem 2rem" }}
               >
-                View Properties
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
+                Contact to View Properties
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>

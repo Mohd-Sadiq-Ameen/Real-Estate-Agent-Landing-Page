@@ -34,13 +34,18 @@ export default function VideoProof() {
       <div className="max-w-6xl mx-auto px-6">
         {/* HEADER */}
         <div className="text-center mb-12">
-          <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase">
-            Real Deals • Real Properties
-          </span>
           <h2 className="text-5xl md:text-6xl font-display text-[#0F1923] mt-4">
             Property <span className="italic text-[#C9A84C]">Walkthroughs</span>
           </h2>
+
+          <div className="h-10"></div>
+
+          <span className="text-[#C9A84C] lg:text-3xl tracking-[0.3em] uppercase">
+            Real Deals • Real Properties
+          </span>
         </div>
+
+        <div className="h-10"></div>
 
         {/* SLIDER WRAPPER */}
         <div className="relative flex items-center justify-center">
