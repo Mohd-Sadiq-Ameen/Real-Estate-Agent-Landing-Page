@@ -8,7 +8,7 @@ const areas = [
     props: "200+ Properties",
   },
   {
-    name: "Greater Kailash (GK-1 & GK-2)",
+    name: "Greater Kailash",
     desc: "Affluent neighbourhood with luxury homes, vibrant markets and excellent connectivity with strong rental demand.",
     img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
     props: "150+ Properties",
@@ -56,7 +56,6 @@ export default function Areas() {
         paddingBottom: "3rem",
       }}
     >
-      {/* Responsive padding overrides */}
       <style>{`
         @media (min-width: 768px) {
           #areas {
@@ -72,7 +71,6 @@ export default function Areas() {
         }
       `}</style>
 
-      {/* Centered container – forced with inline styles */}
       <div
         className="w-full px-6 lg:px-8"
         style={{
@@ -86,8 +84,7 @@ export default function Areas() {
           <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95] mb-8">
             Popular <span className="italic text-[#C9A84C]">Areas</span>
           </h2>
-                  <div className="h-5" ></div>
-
+          <div className="h-5"></div>
           <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467] mb-20 md:mb-24 lg:mb-32">
             Explore South Delhi's most desirable neighbourhoods where luxury
             living, premium infrastructure and long-term investment potential
@@ -95,7 +92,7 @@ export default function Areas() {
           </p>
         </div>
 
-        <div className="h-15" ></div>
+        <div className="h-15"></div>
 
         {/* Area Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 xl:gap-10">
@@ -112,14 +109,28 @@ export default function Areas() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-8 lg:p-9 flex flex-col flex-1">
-                <h3 className="font-display text-3xl lg:text-[2rem] text-[#0F1923] mb-3">
+
+              {/* Card content – guaranteed padding and margins via inline styles */}
+              <div
+                className="p-8 lg:p-9 flex flex-col flex-1"
+                style={{ padding: "2rem 2rem 2rem 2rem" }}
+              >
+                <h3
+                  className="font-display text-3xl lg:text-[2rem] text-[#0F1923]"
+                  style={{ marginBottom: "0.75rem" }}
+                >
                   {area.name}
                 </h3>
-                <p className="text-[#C9A84C] text-sm font-medium mb-6">
+                <p
+                  className="text-[#C9A84C] text-lg font-medium"
+                  style={{ marginBottom: "1.5rem" }}
+                >
                   {area.props}
                 </p>
-                <p className="text-[#667085] text-[15px] leading-8 flex-1 mb-8">
+                <p
+                  className="text-[#667085] text-[15px] leading-8 flex-1"
+                  style={{ marginBottom: "2rem" }}
+                >
                   {area.desc}
                 </p>
                 <div className="flex justify-center">

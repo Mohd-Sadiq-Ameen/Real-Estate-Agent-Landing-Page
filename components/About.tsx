@@ -37,13 +37,32 @@ export default function About() {
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-28 items-center">
-          {/* LEFT IMAGE */}
+          {/* LEFT IMAGE - Now using Next.js Image */}
           <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
               alt="Luxury Property South Delhi"
-              className="w-full h-[350px] md:h-[500px] lg:h-[620px] object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: "center" }}
             />
+            {/* Responsive height via CSS (ensures same visual as before) */}
+            <style jsx>{`
+              .group {
+                height: 350px;
+              }
+              @media (min-width: 768px) {
+                .group {
+                  height: 500px;
+                }
+              }
+              @media (min-width: 1024px) {
+                .group {
+                  height: 620px;
+                }
+              }
+            `}</style>
             <div className="absolute inset-0 rounded-2xl border border-[#C9A84C]/20 pointer-events-none" />
           </div>
 
@@ -53,7 +72,7 @@ export default function About() {
               About Royal Siyaram Estate
             </p>
 
-                  <div className="h-2"></div>
+            <div className="h-2"></div>
 
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] mb-14">
               South Delhi's Trusted

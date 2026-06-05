@@ -18,21 +18,18 @@ export default function Home() {
 
       <div className="bg-white h-10 md:h-16 lg:h-18" />
 
-      <Services />
-      <div className="bg-white h-5 md:h-10 lg:h-15" />
-
-      <VideoProof />
-
-      <About />
-
-      <Areas />
-
-      <CTABanner />
-      <div className="bg-white h-8 md:h-12 lg:h-16" />
-
       <Testimonials />
       <div className="bg-white h-8 md:h-12 lg:h-16" />
 
+      <Areas />
+      <VideoProof />
+      <About />
+
+      <Services />
+      {/* <div className="bg-white h-5 md:h-10 lg:h-15" />
+
+      <CTABanner /> */}
+      <div className="bg-white h-8 md:h-12 lg:h-16" />
       <FAQ />
       <div className="bg-white h-8 md:h-12 lg:h-16" />
 
