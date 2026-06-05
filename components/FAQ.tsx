@@ -26,77 +26,180 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // 🔧 FIX: changed initial state from 0 to null → all closed initially
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="bg-[#FAFAF7]" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
+    <section
+      style={{
+        backgroundColor: "#FAFAF7",
+        paddingTop: "3rem",
+        paddingBottom: "3rem",
+      }}
+    >
       <div
-        className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
-        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
+        style={{
+          maxWidth: "1400px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+        }}
       >
         {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center" style={{ marginBottom: "2rem" }}>
-          <p className="text-[#C9A84C] text-xs sm:text-sm tracking-[0.35em] uppercase" style={{ marginBottom: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            marginBottom: "2rem",
+          }}
+        >
+          <p
+            style={{
+              color: "#C9A84C",
+              fontSize: "0.75rem",
+              letterSpacing: "0.35em",
+              textTransform: "uppercase",
+              marginBottom: "1rem",
+            }}
+          >
             Before You Decide
           </p>
-          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#0F1923] font-normal leading-[0.95]" style={{ marginBottom: "2rem" }}>
+          <h2
+            style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "clamp(2.5rem, 8vw, 5rem)",
+              fontWeight: "normal",
+              color: "#0F1923",
+              lineHeight: "0.95",
+              marginBottom: "2rem",
+            }}
+          >
             Common Concerns
           </h2>
-          <p className="w-full max-w-[780px] mx-auto text-center text-lg md:text-xl leading-[1.9] text-[#475467]">
+          <p
+            style={{
+              maxWidth: "780px",
+              width: "100%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              textAlign: "center",
+              fontSize: "clamp(1rem, 4vw, 1.25rem)",
+              lineHeight: "1.9",
+              color: "#475467",
+            }}
+          >
             Clear answers to the most common questions about buying, selling and renting in South Delhi.
           </p>
         </div>
 
-        {/* FAQ cards container – centered */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-3xl" style={{ maxWidth: "896px", width: "100%" }}>
+        {/* FAQ Accordion */}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ maxWidth: "896px", width: "100%" }}>
             {faqs.map((f, i) => (
               <div
                 key={i}
-                className={`
-                  mb-6 rounded-3xl bg-white border transition-all duration-300
-                  ${openIndex === i
-                    ? "border-[#C9A84C]/30 shadow-lg"
-                    : "border-[#ECE8E1]"
-                  }
-                `}
-                style={{ marginBottom: "1.5rem" }}
+                style={{
+                  marginBottom: "1.5rem",
+                  borderRadius: "1.5rem",
+                  backgroundColor: "white",
+                  border: `1px solid ${
+                    openIndex === i ? "#C9A84C" : "#ECE8E1"
+                  }`,
+                  boxShadow: openIndex === i ? "0 10px 25px -5px rgba(0,0,0,0.1)" : "none",
+                  transition: "all 0.3s ease",
+                }}
               >
                 <button
                   onClick={() => toggleFAQ(i)}
-                  className="w-full text-center"
-                  style={{ padding: "2rem 2.5rem" }}
+                  style={{
+                    width: "100%",
+                    padding: "2rem 2.5rem",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    background: "transparent",
+                    border: "none",
+                  }}
                 >
-                  <div className="flex justify-center items-center gap-4">
-                    <h3 className="max-w-[750px] text-lg md:text-xl font-medium text-[#0F1923] leading-relaxed">
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "1rem",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        maxWidth: "750px",
+                        fontSize: "clamp(1rem, 4vw, 1.25rem)",
+                        fontWeight: "500",
+                        color: "#0F1923",
+                        lineHeight: "1.6",
+                        margin: 0,
+                      }}
+                    >
                       {f.q}
                     </h3>
-                    <span className="text-[#C9A84C] text-3xl leading-none">
+                    <span
+                      style={{
+                        color: "#C9A84C",
+                        fontSize: "1.875rem",
+                        lineHeight: "1",
+                        fontWeight: "300",
+                      }}
+                    >
                       {openIndex === i ? "−" : "+"}
                     </span>
                   </div>
                 </button>
 
                 {openIndex === i && (
-                  <div className="border-t border-[#F1EEE8]">
-                    <div className="w-full text-center" style={{ padding: "2rem 2rem" }}>
-                      <p className="max-w-[750px] mx-auto text-base md:text-lg leading-[1.9] text-[#6B6258]">
-                        {f.a}
-                      </p>
-                      <div className="flex justify-center" style={{ marginTop: "2rem" }}>
-                        <a
-                          href="https://wa.me/919818077956"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm uppercase tracking-[0.2em] text-[#C9A84C] font-semibold hover:underline"
-                        >
-                          Ask About Your Situation →
-                        </a>
-                      </div>
+                  <div
+                    style={{
+                      borderTop: "1px solid #F1EEE8",
+                      padding: "2rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        maxWidth: "750px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        fontSize: "clamp(0.875rem, 3vw, 1rem)",
+                        lineHeight: "1.9",
+                        color: "#6B6258",
+                      }}
+                    >
+                      {f.a}
+                    </p>
+                    <div style={{ marginTop: "2rem", textAlign: "center" }}>
+                      <a
+                        href="https://wa.me/919818077956"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "0.875rem",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.2em",
+                          color: "#C9A84C",
+                          fontWeight: "600",
+                          textDecoration: "none",
+                          transition: "color 0.2s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "#B0892A")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                      >
+                        Ask About Your Situation →
+                      </a>
                     </div>
                   </div>
                 )}

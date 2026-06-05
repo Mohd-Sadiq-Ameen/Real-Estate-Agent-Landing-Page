@@ -69,39 +69,16 @@ export default function Services() {
         bg-white
       "
     >
-      {/* Outer container with fixed max-width and auto margins for 1440px+ */}
       <div
         className="max-w-[1400px] mx-auto px-6 lg:px-8"
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center">
-          <h2
-            className="
-              font-display
-              text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
-              text-black
-              font-normal
-              leading-[1.1]
-              mb-6 sm:mb-8
-            "
-          >
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black font-normal leading-[1.1] mb-6 sm:mb-8">
             Our <span className="italic text-[#C9A84C]">Services</span>
           </h2>
-
-          <p
-            className="
-              w-full
-              max-w-2xl sm:max-w-3xl lg:max-w-4xl
-              mx-auto
-              text-center
-              text-base sm:text-lg md:text-xl
-              leading-relaxed md:leading-[1.8]
-              text-[#475467]
-              mb-16 sm:mb-20 lg:mb-24
-              px-4
-            "
-          >
+          <p className="w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto text-center text-base sm:text-lg md:text-xl leading-relaxed md:leading-[1.8] text-[#475467] mb-16 sm:mb-20 lg:mb-24 px-4">
             Helping buyers, sellers and investors discover premium builder
             floors, commercial spaces and high-value property opportunities
             across South Delhi.
@@ -131,6 +108,7 @@ export default function Services() {
                 hover:-translate-y-1
               "
             >
+              {/* Image */}
               <div className="relative h-56 sm:h-60 md:h-64 overflow-hidden">
                 <Image
                   src={s.img}
@@ -147,8 +125,15 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 lg:p-8 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-4 sm:mb-5">
+              {/* Card Content – guaranteed padding and margins via inline styles */}
+              <div
+                className="p-6 sm:p-7 lg:p-8 flex flex-col flex-1"
+                style={{ padding: "1.5rem 1.5rem 1.5rem 1.5rem" }}
+              >
+                <div
+                  className="flex items-center gap-3"
+                  style={{ marginBottom: "1rem" }}
+                >
                   <div className="w-10 h-10 border border-[#C9A84C]/40 rounded-md flex items-center justify-center">
                     <s.icon size={16} className="text-[#C9A84C]" />
                   </div>
@@ -156,36 +141,25 @@ export default function Services() {
                     {s.title}
                   </h3>
                 </div>
-                <p className="text-[#8B7D6B] text-base leading-relaxed flex-1">
+                <p
+                  className="text-[#8B7D6B] text-base leading-relaxed flex-1"
+                  style={{ marginBottom: "1.25rem" }}
+                >
                   {s.desc}
                 </p>
 
                 <div className="h-5" />
 
-                <div className="mt-6 pt-5 border-t border-[#F1EEE8] flex justify-center">
+                <div
+                  className="mt-6 pt-5 border-t border-[#F1EEE8] flex justify-center"
+                  style={{ marginTop: "1.5rem", paddingTop: "1.25rem" }}
+                >
                   <a
                     href="https://wa.me/919818077956"
                     target="_blank"
                     rel="noopener"
-                    className="
-                      inline-flex
-                      items-center
-                      justify-center
-                      px-5 sm:px-6
-                      py-2.5 sm:py-3
-                      rounded-lg
-                      border
-                      border-white
-                      text-[#C9A84C]
-                      text-base sm:text-base
-                      uppercase
-                      tracking-[0.15em]
-                      font-medium
-                      transition-all
-                      duration-300
-                      hover:bg-[#C9A84C]
-                      hover:text-white
-                    "
+                    className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-white text-[#C9A84C] text-base sm:text-base uppercase tracking-[0.15em] font-medium transition-all duration-300 hover:bg-[#C9A84C] hover:text-white"
+                    style={{ padding: "0.625rem 1.25rem" }}
                   >
                     {s.cta}
                   </a>
