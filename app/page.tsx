@@ -19,16 +19,15 @@ export default function Home() {
       <div className="bg-white h-10 md:h-16 lg:h-18" />
 
       <Testimonials />
-      <div className="bg-white h-8 md:h-12 lg:h-16" />
+      <VideoProof />
+      <div className="bg-white h-1 md:h-1 lg:h-1" />
 
       <Areas />
-      <VideoProof />
       <About />
+      <div className="bg-white h-6 md:h-10 lg:h-12" />
 
       <Services />
-      {/* <div className="bg-white h-5 md:h-10 lg:h-15" />
 
-      <CTABanner /> */}
       <div className="bg-white h-8 md:h-12 lg:h-16" />
       <FAQ />
       <div className="bg-white h-8 md:h-12 lg:h-16" />

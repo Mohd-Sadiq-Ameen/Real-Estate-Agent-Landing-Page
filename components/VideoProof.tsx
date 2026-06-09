@@ -31,12 +31,14 @@ export default function VideoProof() {
 
   return (
     <section id="video-proof" className="relative z-10 py-24 bg-[#F5F0E8]">
+              <div className="h-10"></div>
+
       <div
         className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         {/* HEADER */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 ">
           <h2 className="text-5xl md:text-6xl font-display text-[#0F1923] mt-4">
             Property <span className="italic text-[#C9A84C]">Walkthroughs</span>
           </h2>
@@ -108,7 +110,7 @@ export default function VideoProof() {
           ))}
         </div>
       </div>
-      <div className="h-15 md:h-20 lg:h-24" />
+      <div className="h-5 md:h-14 lg:h-14" />
     </section>
   );
 }

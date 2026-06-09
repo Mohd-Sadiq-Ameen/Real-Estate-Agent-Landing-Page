@@ -75,7 +75,7 @@ export default function Services() {
       >
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black font-normal leading-[1.1] mb-6 sm:mb-8">
+          <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl text-black font-normal leading-[1.1] mb-6 sm:mb-8">
             Our <span className="italic text-[#C9A84C]">Services</span>
           </h2>
           <p className="w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto text-center text-base sm:text-lg md:text-xl leading-relaxed md:leading-[1.8] text-[#475467] mb-16 sm:mb-20 lg:mb-24 px-4">
@@ -169,7 +169,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-      <div className="h-15" />
     </section>
   );
 }

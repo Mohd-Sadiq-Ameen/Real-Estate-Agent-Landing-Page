@@ -86,7 +86,7 @@ export default function GoogleReviews() {
         <div className="mt-12 text-center text-lg text-[#94A3B8]">
           Verified Google reviews • 100% authentic client experiences
         </div>
-        <div className="h-5" />
+        <div className="h-10" />
       </div>
     </section>
   );
