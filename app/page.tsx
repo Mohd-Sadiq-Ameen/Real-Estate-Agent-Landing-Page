@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Areas from "@/components/Areas";
+import Areas from "@/components/FeaturedProperties";
 import CTABanner from "@/components/CTABanner";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -23,12 +23,12 @@ export default function Home() {
       <div className="bg-white h-1 md:h-1 lg:h-1" />
 
       <Areas />
-      <About />
-      <div className="bg-white h-6 md:h-10 lg:h-12" />
-
       <Services />
 
       <div className="bg-white h-8 md:h-12 lg:h-16" />
+      <About />
+      <div className="bg-white h-6 md:h-10 lg:h-12" />
+
       <FAQ />
       <div className="bg-white h-8 md:h-12 lg:h-16" />
 
