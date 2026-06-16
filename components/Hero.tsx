@@ -27,19 +27,19 @@ export default function Hero() {
         className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ maxWidth: "1400px" }}
       >
-        <div className="h-40 sm:h-10 md:h-32 lg:h-12" />
-        <div className="md:h-20 lg:h-18"></div>
+        <div className="h-40 sm:h-10 md:h-16 lg:h-12" />
+        <div className=""></div>
 
         <h1
           className="
             font-display
-            text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl
+            text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl
             font-light text-white
-            mb-4 leading-tight
+            mb-2  mt-7 md:mt-0 leading-tight
           "
         >
           Luxury Properties <br />
-          <span className="text-[#C9A84C] italic inline-block mt-2">
+          <span className="text-[#C9A84C] italic inline-block">
             in South Delhi
           </span>
         </h1>
@@ -48,15 +48,15 @@ export default function Hero() {
         <div className="flex justify-center w-full">
           <p
             className="
-              text-white/75
-              text-base sm:text-lg md:text-xl lg:text-2xl
-              max-w-4xl lg:max-w-5xl
+              text-gray-300
+              text-base sm:text-lg md:text-lg lg:text-xl
+              max-w-90 md:max-w-115 lg:max-w-150 xl:max-w-140
               leading-relaxed
-              px-2 sm:px-4
+              px-1 mt-1 sm:px-4
             "
             style={{ textAlign: "center" }}
           >
-            Buy, sell, rent and invest in premium builder floors and commercial
+            Buy, sell, rent and invest in premium builder floors & commercial
             spaces with trusted local expertise.
           </p>
         </div>
