@@ -15,9 +15,6 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-
-      <div className="bg-white h-10 md:h-16 lg:h-18" />
-
       <Testimonials />
       <VideoProof />
       <div className="bg-white h-1 md:h-1 lg:h-1" />

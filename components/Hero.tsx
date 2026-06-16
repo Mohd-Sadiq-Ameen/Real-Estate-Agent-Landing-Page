@@ -7,18 +7,18 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[65vh] md:min-h-[50vh] xl:min-h-[40vh] h-full w-full  flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <Image
           src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85"
           alt="Luxury property South Delhi"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-bottom md:object-bottom lg:object-bottom w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F1923]/95 via-[#0F1923]/80 to-[#0F1923]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0F1923]/75 via-[#0F1923]/55 to-[#0F1923]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/60 via-transparent to-transparent" />
       </div>
 
@@ -27,15 +27,15 @@ export default function Hero() {
         className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         style={{ maxWidth: "1400px" }}
       >
-        <div className="h-40 sm:h-10 md:h-16 lg:h-12" />
+        <div className="h-40 sm:h-10 md:h-0 lg:h-5" />
         <div className=""></div>
 
         <h1
           className="
             font-display
-            text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl
+            text-5xl sm:text-5xl md:text-[50px] lg:text-7xl xl:text-7xl
             font-light text-white
-            mb-2  mt-7 md:mt-0 leading-tight
+            mb-2  mt-4 md:mt-36 leading-tight
           "
         >
           Luxury Properties <br />
@@ -49,8 +49,8 @@ export default function Hero() {
           <p
             className="
               text-gray-300
-              text-base sm:text-lg md:text-lg lg:text-xl
-              max-w-90 md:max-w-115 lg:max-w-150 xl:max-w-140
+              text-sm md:font-base lg:text-xl
+              max-w-90 md:max-w-103 lg:max-w-150 xl:max-w-140
               leading-relaxed
               px-1 mt-1 sm:px-4
             "
@@ -63,22 +63,21 @@ export default function Hero() {
 
         <div className="h-8 lg:h-10" />
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-2 lg:gap-5">
           <a
             href="https://wa.me/919818077956"
             target="_blank"
             rel="noopener"
             className="
-              inline-flex items-center justify-center gap-3
+              inline-flex items-center justify-center gap-3 
               bg-[#D4AF37] hover:bg-[#b8922f]
               text-white
               font-semibold uppercase
-              text-sm sm:text-base
-              tracking-wide
+              text-sm
               transition-all duration-300
               rounded-lg shadow-md hover:shadow-xl
             "
-            style={{ padding: "12px 24px" }}
+            style={{ padding: "8px 4px" }}
           >
             <svg
               width="20"
@@ -95,25 +94,22 @@ export default function Hero() {
           <a
             href="tel:+919818077956"
             className="
-              inline-flex items-center justify-center gap-3
+              inline-flex items-center justify-center gap-2
               border border-white/40 hover:border-[#C9A84C]
               text-white hover:text-[#C9A84C]
               font-medium uppercase
-              text-sm sm:text-base
-              tracking-wide
+              text-sm
               transition-all duration-300
               rounded-lg
             "
-            style={{ padding: "12px 24px" }}
+            style={{ padding: "8px 34px" }}
           >
             <Phone size={20} />
             Call Now
           </a>
         </div>
 
-        <div className="h-8 lg:h-10" />
-
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full mt-4 mb-3 md:mb-5 lg:mb-0 lg:mt-5 xl:mb-5">
           <div className="grid grid-cols-3 gap-8 sm:gap-12 w-full max-w-md">
             {[
               { num: "500+", label: "DEALS" },
@@ -121,7 +117,7 @@ export default function Hero() {
               { num: "1000+", label: "CLIENTS" },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <div className="font-display text-3xl md:text-4xl text-[#C9A84C] font-semibold">
+                <div className="font-display text-2xl md:text-2xl text-[#C9A84C] font-semibold ">
                   {s.num}
                 </div>
                 <div className="text-white/50 text-xs uppercase tracking-widest mt-1">
@@ -131,13 +127,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
-        <div className="h-4" />
-      </div>
-
-      <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center text-white/40">
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="animate-bounce" size={14} />
       </div>
     </section>
   );

@@ -95,7 +95,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-10 flex-nowrap">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10 flex-nowrap mr-25 xl:mr-40">
             {links.map((link) => (
               <a
                 key={link.name}
