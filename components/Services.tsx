@@ -1,274 +1,145 @@
 "use client";
 
-import { Home, Key, TrendingUp } from "lucide-react";
+import { Home, Key, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const services = [
   {
     Icon: Home,
     title: "Buy Property",
-    desc: "Access verified South Delhi listings before they hit the market.",
-    highlights: ["Builder Floors", "Luxury Homes", "Commercial Spaces", "Verified Listings"],
+    desc: "Access verified South Delhi properties, builder floors, luxury homes and investment opportunities before they hit the wider market.",
+    highlights: [
+      "Builder Floors",
+      "Luxury Homes",
+      "Commercial Spaces",
+      "Verified Listings",
+    ],
   },
   {
     Icon: Key,
     title: "Rent Property",
-    desc: "Residential and commercial rentals — zero brokerage, quick possession.",
-    highlights: ["Residential Rentals", "Office Spaces", "Retail Outlets", "Quick Possession"],
+    desc: "Find residential and commercial rental properties with expert guidance and smooth possession support.",
+    highlights: [
+      "Residential Rentals",
+      "Office Spaces",
+      "Retail Outlets",
+      "Quick Possession",
+    ],
   },
   {
     Icon: TrendingUp,
     title: "Sell Property",
-    desc: "Get the right price with our valuation support and active buyer network.",
-    highlights: ["Property Valuation", "Buyer Network", "Marketing Support", "Documentation"],
+    desc: "Maximize your property's value through strategic pricing, targeted marketing and our active buyer network.",
+    highlights: [
+      "Property Valuation",
+      "Buyer Network",
+      "Marketing Support",
+      "Documentation",
+    ],
   },
 ];
 
 const WA_NUMBER = "919818077956";
-const WA_MSG = "Hi, I'd like to know more about your services.";
+const WA_MSG = "Hi, I'd like to know more about your real estate services.";
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      style={{
-        background: "#FAFAF8",
-        paddingTop: "88px",
-        paddingBottom: "88px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1400px",
-          margin: "0 auto",
-          paddingLeft: "24px",
-          paddingRight: "24px",
-        }}
-      >
-        {/* Eyebrow */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "10px",
-            fontSize: "11px",
-            fontWeight: 600,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#C9A84C",
-            marginBottom: "16px",
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              width: "28px",
-              height: "1px",
-              background: "#C9A84C",
-              opacity: 0.5,
-            }}
-          />
-          What we offer
-          <span
-            style={{
-              display: "inline-block",
-              width: "28px",
-              height: "1px",
-              background: "#C9A84C",
-              opacity: 0.5,
-            }}
-          />
+    <section id="services" className="bg-[#FAFAF8] py-16 md:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-14 max-w-3xl">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-[#C9A84C]">
+            Our Services
+          </p>
+
+          <h2 className="font-display text-4xl leading-tight text-[#0F1923] sm:text-5xl lg:text-6xl">
+            Real Estate Solutions
+            <span className="mt-2 block italic text-[#C9A84C]">
+              Built Around Your Goals
+            </span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            Whether you're buying, renting or selling property, Royal Siyaram
+            Estate provides trusted guidance, verified opportunities and
+            end-to-end support across South Delhi.
+          </p>
         </div>
 
-        <h2
-          className="font-display"
-          style={{
-            margin: "0 0 10px",
-            color: "#0F1923",
-            fontSize: "clamp(36px, 5vw, 52px)",
-            fontWeight: 400,
-            lineHeight: 1.1,
-            letterSpacing: "-0.01em",
-          }}
-        >
-          How we can{" "}
-          <em style={{ color: "#C9A84C", fontStyle: "italic" }}>help you.</em>
-        </h2>
-
-        <p
-          style={{
-            fontSize: "15px",
-            color: "#667085",
-            lineHeight: 1.65,
-            margin: "0 0 52px",
-            maxWidth: "460px",
-          }}
-        >
-          Three ways Royal Siyaram Estate works for you — whether you're
-          buying, renting, or ready to sell.
-        </p>
-
-        {/* Cards grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "2px",
-            background: "#ECE7DF",
-            border: "1px solid #ECE7DF",
-            borderRadius: "16px",
-            overflow: "hidden",
-          }}
-        >
+        {/* Services Grid */}
+        <div className="grid gap-6 lg:grid-cols-3">
           {services.map(({ Icon, title, desc, highlights }) => (
             <div
               key={title}
-              style={{
-                background: "#FFFFFF",
-                padding: "36px 32px",
-                display: "flex",
-                flexDirection: "column",
-                transition: "background 0.2s",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLDivElement).style.background = "#FFFDF7")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLDivElement).style.background = "#FFFFFF")
-              }
+              className="group flex h-full flex-col rounded-3xl border border-[#E8E4DB] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A84C]/30 hover:shadow-2xl"
             >
-              <div
-                style={{
-                  width: "52px",
-                  height: "52px",
-                  borderRadius: "14px",
-                  background: "#FAF8F4",
-                  border: "1px solid #ECE7DF",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "20px",
-                  flexShrink: 0,
-                }}
-              >
-                <Icon size={22} color="#C9A84C" />
+              {/* Icon */}
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FAF8F3] border border-[#ECE7DF]">
+                <Icon size={28} className="text-[#C9A84C]" />
               </div>
 
-              <h3
-                className="font-display"
-                style={{
-                  margin: "0 0 6px",
-                  color: "#0F1923",
-                  fontSize: "28px",
-                  fontWeight: 400,
-                  lineHeight: 1.15,
-                }}
-              >
-                {title}
-              </h3>
+              {/* Title */}
+              <h3 className="font-display text-3xl text-[#0F1923]">{title}</h3>
 
-              <p
-                style={{
-                  fontSize: "13px",
-                  color: "#9AA5B4",
-                  lineHeight: 1.6,
-                  margin: "0 0 24px",
-                }}
-              >
-                {desc}
-              </p>
+              {/* Description */}
+              <p className="mt-4 text-base leading-7 text-slate-600">{desc}</p>
 
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                  marginTop: "auto",
-                }}
-              >
+              {/* Features */}
+              <div className="mt-8 space-y-3">
                 {highlights.map((item) => (
-                  <div
-                    key={item}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      fontSize: "14px",
-                      color: "#344054",
-                      fontWeight: 500,
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "5px",
-                        height: "5px",
-                        borderRadius: "50%",
-                        background: "#C9A84C",
-                        flexShrink: 0,
-                      }}
-                    />
-                    {item}
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 size={16} className="text-[#C9A84C]" />
+
+                    <span className="text-sm font-medium text-slate-700">
+                      {item}
+                    </span>
                   </div>
                 ))}
+              </div>
+
+              {/* Bottom Link */}
+              <div className="mt-auto pt-8">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#C9A84C]">
+                  Learn More
+                  <ArrowRight
+                    size={16}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA row */}
-        <div
-          style={{
-            marginTop: "32px",
-            paddingTop: "24px",
-            borderTop: "1px solid #ECE7DF",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "16px",
-          }}
-        >
-          <span style={{ fontSize: "13px", color: "#9AA5B4" }}>
-            Not sure where to start?
-          </span>
-          <a
-            href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "#0F1923",
-              color: "#25d366",
-              fontSize: "13px",
-              fontWeight: 600,
-              padding: "11px 20px",
-              borderRadius: "8px",
-              textDecoration: "none",
-              letterSpacing: "0.01em",
-              transition: "background 0.2s",
-            }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.background = "#1a2d3f")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLAnchorElement).style.background = "#0F1923")
-            }
-          >
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+        {/* CTA Section */}
+        <div className="mt-16 rounded-3xl bg-[#0F1923] p-8 md:p-12">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="mb-2 text-sm uppercase tracking-[0.3em] text-[#C9A84C]">
+                Need Expert Guidance?
+              </p>
+
+              <h3 className="font-display text-3xl text-white md:text-4xl">
+                Let's Discuss Your Property Goals
+              </h3>
+
+              <p className="mt-3 max-w-2xl text-white/70">
+                Speak directly with our team and get personalized advice for
+                buying, renting or selling property in South Delhi.
+              </p>
+            </div>
+
+            <a
+              href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+                WA_MSG,
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#C9A84C] px-7 py-4 text-sm font-semibold uppercase tracking-wider text-[#0F1923] transition-all duration-300 hover:bg-[#D7B85D]"
             >
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            </svg>
-            Talk to us on WhatsApp
-          </a>
+              Contact on WhatsApp
+              <ArrowRight size={18} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
