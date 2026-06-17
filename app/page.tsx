@@ -18,16 +18,11 @@ export default function Home() {
       <VideoProof />
       <Areas />
       <Services />
-
-      <div className="bg-white h-8 md:h-12 lg:h-16" />
       <About />
-      <div className="bg-white h-6 md:h-10 lg:h-12" />
 
       <FAQ />
-      <div className="bg-white h-8 md:h-12 lg:h-16" />
 
       <Contact />
-      <div className="bg-white h-6 md:h-9 lg:h-10" />
 
       <Footer />
 

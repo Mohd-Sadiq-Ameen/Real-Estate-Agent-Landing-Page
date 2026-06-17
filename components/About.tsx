@@ -1,13 +1,13 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const features = [
-  "10+ Years of South Delhi Market Experience",
-  "Builder Floor & Luxury Property Specialists",
-  "Transparent Transactions & Fair Valuations",
-  "Complete Documentation & Legal Support",
+  "Builder Floors & Luxury Home Specialists",
+  "Property Buying, Selling & Leasing",
+  "Investment Consultation & Market Insights",
+  "Documentation & Legal Assistance",
 ];
 
 const stats = [
@@ -20,130 +20,119 @@ export default function About() {
   const scrollToVideo = () => {
     const target = document.getElementById("video-proof");
     if (!target) return;
+
     const offset = 100;
     const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: "smooth" });
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   };
 
   return (
     <section
       id="about"
-      className="relative w-full overflow-hidden bg-[#0F1923] pt-28 md:pt-36 lg:pt-44 pb-40 md:pb-48 lg:pb-56"
+      className="relative overflow-hidden bg-[#0F1923] py-10 md:py-14 lg:py-14"
     >
-      <div className="h-8"></div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
+          {/* IMAGE */}
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+            <div className="relative h-[320px] md:h-[450px] lg:h-[560px]">
+              <Image
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+                alt="Luxury Property South Delhi"
+                fill
+                priority
+                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </div>
 
-      <div
-        className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
-        style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
-      >
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-28 items-center">
-          {/* LEFT IMAGE - Now using Next.js Image */}
-          <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
-              alt="Luxury Property South Delhi"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              style={{ objectPosition: "center" }}
-            />
-            {/* Responsive height via CSS (ensures same visual as before) */}
-            <style jsx>{`
-              .group {
-                height: 350px;
-              }
-              @media (min-width: 768px) {
-                .group {
-                  height: 500px;
-                }
-              }
-              @media (min-width: 1024px) {
-                .group {
-                  height: 620px;
-                }
-              }
-            `}</style>
-            <div className="absolute inset-0 rounded-2xl border border-[#C9A84C]/20 pointer-events-none" />
+            <div className="absolute inset-0 border border-[#C9A84C]/20 rounded-3xl" />
+
+            {/* Trust Badge */}
+            <div className="absolute bottom-6 left-6 rounded-2xl border border-white/10 bg-black/50 backdrop-blur-md px-5 py-4">
+              <p className="font-display text-3xl text-[#C9A84C]">10+</p>
+              <p className="text-sm text-white/80 tracking-wide">
+                Years Trusted
+              </p>
+            </div>
           </div>
 
-          {/* RIGHT CONTENT */}
-          <div className="max-w-[620px] mx-auto lg:mx-0">
-            <p className="text-[#C9A84C] uppercase tracking-[0.3em] text-base font-medium mb-8">
+          {/* CONTENT */}
+          <div className="max-w-[700px]">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-[#C9A84C]">
               About Royal Siyaram Estate
             </p>
 
-            <div className="h-2"></div>
-
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-normal leading-[1.08] mb-14">
+            <h2 className="mb-8 font-display text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
               South Delhi's Trusted
-              <span className="italic text-[#C9A84C] block mt-2">
-                Estate Partner
+              <span className="mt-2 block italic text-[#C9A84C]">
+                Real Estate Partner
               </span>
             </h2>
-            <p className="text-white/75 text-lg md:text-xl leading-[2] mb-10">
-              For over two decades, Royal Siyaram Estate has helped buyers,
-              sellers, investors and tenants make confident property decisions
-              across South Delhi's most desirable neighbourhoods.
-            </p>
-            <p className="text-white/60 text-lg md:text-xl leading-[2] mb-20">
-              From luxury builder floors and independent homes to commercial
-              investments, we combine local expertise, market knowledge and
-              transparent guidance to deliver exceptional results.
-            </p>
-            <div className="w-24 h-px bg-[#C9A84C]/25 mb-20" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-20">
+            <p className="mb-5 text-lg leading-8 text-white/80">
+              Helping buyers, sellers, investors and tenants make confident
+              property decisions across South Delhi's most desirable locations.
+            </p>
+
+            <p className="mb-10 text-lg leading-8 text-white/65">
+              From luxury builder floors and premium residences to commercial
+              investments, we combine local expertise, transparent advice and
+              deep market knowledge to deliver exceptional results.
+            </p>
+
+            {/* STATS */}
+            <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
               {stats.map((stat) => (
-                <div key={stat.label} className="text-center sm:text-left">
-                  <div className="font-display text-5xl lg:text-6xl text-[#C9A84C]">
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                >
+                  <div className="font-display text-4xl text-[#C9A84C]">
                     {stat.number}
                   </div>
-                  <div className="text-white/50 text-sm mt-4 tracking-wide">
+
+                  <div className="mt-2 text-sm tracking-wide text-white/60">
                     {stat.label}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-8 mb-12">
-              {features.map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <CheckCircle2 size={20} className="text-[#C9A84C] mt-[6px]" />
-                  <span className="text-white/75 text-lg leading-8">
-                    {item}
+            {/* FEATURES */}
+            <div className="mb-10 space-y-5">
+              {features.map((feature) => (
+                <div key={feature} className="flex items-start gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="mt-1 text-[#C9A84C] shrink-0"
+                  />
+
+                  <span className="text-base leading-7 text-white/80">
+                    {feature}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="h-8"></div>
-
-            <div className="flex justify-start">
-              <button
-                onClick={scrollToVideo}
-                className="inline-flex items-center gap-3 bg-[#C9A84C] hover:bg-[#D7B85D] text-[#0F1923] px-8 py-4 rounded-lg font-semibold uppercase tracking-wider text-sm transition-all duration-300 shadow-md hover:shadow-lg"
-                style={{ padding: "1rem 2rem" }}
-              >
-                Contact to View Properties
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
+            {/* CTA */}
+            <button
+              onClick={scrollToVideo}
+              className="group inline-flex items-center gap-3 rounded-xl bg-[#C9A84C] px-7 py-4 text-sm font-semibold uppercase tracking-wider text-[#0F1923] transition-all duration-300 hover:bg-[#D6B75C]"
+            >
+              Speak With An Expert
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
           </div>
         </div>
       </div>
-      <div className="h-8"></div>
     </section>
   );
 }
