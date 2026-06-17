@@ -52,7 +52,7 @@ export default function FeaturedProperties() {
   const scrollNext = () => goTo(currentIndex + 1);
 
   return (
-    <section className="w-full bg-[#0F1923] pt-20 pb-[88px]">
+    <section className="w-full bg-[#0F1923] pt-10 pb-10">
       {/* Header */}
       <div className="text-center px-6 md:px-8 mb-[52px]">
         <div className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#C9A84C] mb-4">
@@ -106,9 +106,7 @@ export default function FeaturedProperties() {
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`h-1.5 rounded-full transition-all ${
-                i === currentIndex
-                  ? "w-5 bg-[#C9A84C]"
-                  : "w-1.5 bg-white/15"
+                i === currentIndex ? "w-5 bg-[#C9A84C]" : "w-1.5 bg-white/15"
               }`}
             />
           ))}
