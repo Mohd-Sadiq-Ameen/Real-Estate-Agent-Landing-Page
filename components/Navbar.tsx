@@ -79,13 +79,13 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleScroll(e, "#home")}
-            className="flex items-center gap-4 cursor-pointer flex-shrink-0"
+            className="flex items-center gap-3 cursor-pointer flex-shrink-0"
           >
-            <div className="w-12 h-12 xl:w-16 xl:h-16 border-2 border-[#C9A84C] flex items-center justify-center">
-              <span className="text-[#C9A84C] text-xl xl:text-3xl font-bold">RS</span>
+            <div className="w-12 h-12 xl:w-14 xl:h-14 border-2 border-[#C9A84C] flex items-center justify-center">
+              <span className="text-[#C9A84C] text-xl xl:text-2xl font-bold">RS</span>
             </div>
             <div>
-              <div className="text-white text-xl xl:text-3xl font-semibold leading-tight whitespace-nowrap">
+              <div className="text-white text-lg xl:text-2xl font-semibold leading-tight whitespace-nowrap">
                 Royal Siyaram
               </div>
               <div className="text-[#C9A84C] text-xs lg:text-sm tracking-[0.3em] uppercase whitespace-nowrap">
@@ -149,7 +149,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {open && (
-        <div className="lg:hidden bg-[#0F1923] border-t border-white/10 px-6 py-8 flex flex-col gap-6">
+        <div className="md:hidden lg:hidden bg-[#0F1923] border-t border-white/10 px-6 py-8 flex flex-col gap-6">
           {links.map((link) => (
             <a
               key={link.name}

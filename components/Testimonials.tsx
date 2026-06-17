@@ -14,7 +14,10 @@ export default function GoogleReviews() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-[#FAFAF9] overflow-hidden">
+    <section
+      id="testimonials"
+      className="py-6 md:py-8 bg-white overflow-hidden  mt-0"
+    >
       <div
         className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
@@ -65,9 +68,7 @@ export default function GoogleReviews() {
           ))}
         </div>
 
-        <div className="h-12 md:h-16" />
-
-        <div className="text-center">
+        <div className="text-center mt-8">
           <a
             href={googleReviewLink}
             target="_blank"
@@ -76,17 +77,26 @@ export default function GoogleReviews() {
             style={{ padding: "1rem 2rem" }}
           >
             Read All 300+ Google Reviews
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </a>
         </div>
 
-        <div className="h-5" />
-        <div className="mt-12 text-center text-lg text-[#94A3B8]">
-          Verified Google reviews • 100% authentic client experiences
+        <div className="mt-6 mb-0 flex justify-center gap-6 text-center text-base text-[#94A3B8]">
+          <div>• Verified Google reviews </div>
+          <div>• 100% authentic client experiences</div>
         </div>
-        <div className="h-10" />
       </div>
     </section>
   );

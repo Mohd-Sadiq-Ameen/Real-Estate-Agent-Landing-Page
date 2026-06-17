@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Areas from "@/components/FeaturedProperties";
-import CTABanner from "@/components/CTABanner";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -17,8 +16,6 @@ export default function Home() {
       <Hero />
       <Testimonials />
       <VideoProof />
-      <div className="bg-white h-1 md:h-1 lg:h-1" />
-
       <Areas />
       <Services />
 

@@ -110,7 +110,7 @@ export default function VideoProof() {
           ))}
         </div>
       </div>
-      <div className="h-5 md:h-14 lg:h-14" />
+      <div className="h-2 md:h-5 lg:h-2" />
     </section>
   );
 }

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[65vh] md:min-h-[50vh] xl:min-h-[40vh] h-full w-full  flex items-center justify-center overflow-hidden"
+      className="relative min-h-[65vh] md:min-h-[50vh] lg:min-h-[45vh] xl:min-h-[40vh] h-full w-full  flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0 w-full h-full">
@@ -33,7 +33,7 @@ export default function Hero() {
         <h1
           className="
             font-display
-            text-5xl sm:text-5xl md:text-[50px] lg:text-7xl xl:text-7xl
+            text-5xl sm:text-5xl md:text-[50px] lg:text-6xl xl:text-6xl
             font-light text-white
             mb-2  mt-4 md:mt-36 leading-tight
           "
@@ -49,8 +49,8 @@ export default function Hero() {
           <p
             className="
               text-gray-300
-              text-sm md:font-base lg:text-xl
-              max-w-90 md:max-w-103 lg:max-w-150 xl:max-w-140
+              text-sm md:font-base lg:text-base
+              max-w-90 md:max-w-103 lg:max-w-95 xl:max-w-115
               leading-relaxed
               px-1 mt-1 sm:px-4
             "
