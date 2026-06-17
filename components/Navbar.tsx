@@ -51,17 +51,17 @@ export default function Navbar() {
       }`}
     >
       {/* Top Contact Bar – now uses same max-width as main navbar */}
-      <div className="bg-[#C9A84C] text-[#0F1923] py-3 md:py-4 px-4">
+      <div className="bg-[#C9A84C] text-[#0F1923] px-2 py-2 md:py-1 xl:py-1 ">
         <div
           className="w-full max-w-[1400px] mx-auto flex items-center justify-center"
           style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
         >
           <div className="flex items-center gap-2 text-sm md:text-base font-semibold tracking-wide">
-            <Phone size={16} className="md:w-5 md:h-5" />
+            <Phone size={14} className="md:w-5 md:h-5" />
             <span>Call Now:</span>
             <a
               href="tel:+919818077956"
-              className="font-bold text-sm md:text-lg hover:underline"
+              className="font-bold text-sm md:text-base hover:underline"
             >
               +91 98180 77956
             </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <div
-        className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-6 lg:py-7"
+        className="w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-2 md:py-1 lg:py-2 xl:py-1"
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         <div className="flex items-center justify-between gap-4 flex-nowrap">
@@ -81,11 +81,11 @@ export default function Navbar() {
             onClick={(e) => handleScroll(e, "#home")}
             className="flex items-center gap-3 cursor-pointer flex-shrink-0"
           >
-            <div className="w-12 h-12 xl:w-14 xl:h-14 border-2 border-[#C9A84C] flex items-center justify-center">
+            <div className="w-10 h-8 xl:w-12 xl:h-12 border-2 border-[#C9A84C] flex items-center justify-center">
               <span className="text-[#C9A84C] text-xl xl:text-2xl font-bold">RS</span>
             </div>
             <div>
-              <div className="text-white text-lg xl:text-2xl font-semibold leading-tight whitespace-nowrap">
+              <div className="text-white text-base xl:text-2xl font-semibold leading-tight whitespace-nowrap">
                 Royal Siyaram
               </div>
               <div className="text-[#C9A84C] text-xs lg:text-sm tracking-[0.3em] uppercase whitespace-nowrap">
@@ -95,7 +95,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10 flex-nowrap mr-25 xl:mr-40">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10 flex-nowrap mr-12 xl:mr-30">
             {links.map((link) => (
               <a
                 key={link.name}

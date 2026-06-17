@@ -52,110 +52,36 @@ export default function FeaturedProperties() {
   const scrollNext = () => goTo(currentIndex + 1);
 
   return (
-    <section
-      style={{
-        width: "100%",
-        background: "#0F1923",
-        paddingTop: "80px",
-        paddingBottom: "88px",
-      }}
-    >
+    <section className="w-full bg-[#0F1923] pt-20 pb-[88px]">
       {/* Header */}
-      <div
-        style={{
-          textAlign: "center",
-          padding: "0 24px",
-          marginBottom: "52px",
-        }}
-      >
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "10px",
-            fontSize: "11px",
-            fontWeight: 600,
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            color: "#C9A84C",
-            marginBottom: "16px",
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              width: "28px",
-              height: "1px",
-              background: "#C9A84C",
-              opacity: 0.5,
-            }}
-          />
+      <div className="text-center px-6 md:px-8 mb-[52px]">
+        <div className="inline-flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#C9A84C] mb-4">
+          <span className="w-7 h-px bg-[#C9A84C] opacity-50" />
           Featured Listings
-          <span
-            style={{
-              display: "inline-block",
-              width: "28px",
-              height: "1px",
-              background: "#C9A84C",
-              opacity: 0.5,
-            }}
-          />
+          <span className="w-7 h-px bg-[#C9A84C] opacity-50" />
         </div>
 
-        <h2
-          style={{
-            fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-            fontSize: "clamp(36px, 5vw, 52px)",
-            fontWeight: 500,
-            color: "#F5F0E8",
-            lineHeight: 1.1,
-            margin: "0 0 14px",
-            letterSpacing: "-0.01em",
-          }}
-        >
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-[#F5F0E8] leading-tight mb-3.5">
           Properties Worth
           <br />
           Your Attention
         </h2>
 
-        <p
-          style={{
-            fontSize: "15px",
-            color: "rgba(255,255,255,0.4)",
-            maxWidth: "440px",
-            margin: "0 auto",
-            lineHeight: 1.65,
-          }}
-        >
+        <p className="text-sm text-white/40 max-w-[440px] mx-auto leading-relaxed">
           Handpicked residences in prime South Delhi locations — ready to view.
         </p>
       </div>
 
       {/* Carousel */}
-      <div style={{ padding: "0 20px" }}>
+      <div className="px-5">
         <div
           ref={scrollContainerRef}
-          style={{
-            display: "flex",
-            gap: "20px",
-            overflowX: "auto",
-            scrollSnapType: "x mandatory",
-            msOverflowStyle: "none",
-            scrollbarWidth: "none",
-            padding: "8px 4px 16px",
-          }}
-          // hide webkit scrollbar via global or inline won't work — use a className just for this
-          className="hide-scrollbar"
+          className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide px-1 py-2 pb-4"
         >
           {properties.map((property) => (
             <div
               key={property.slug}
-              style={{
-                flexShrink: 0,
-                // 1 col mobile, 2 col tablet, 3 col desktop
-                width: "min(calc(100% - 8px), 360px)",
-                scrollSnapAlign: "start",
-              }}
+              className="flex-shrink-0 w-[calc(100%-8px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
             >
               <PropertyCard property={property} />
             </div>
@@ -164,69 +90,26 @@ export default function FeaturedProperties() {
       </div>
 
       {/* Nav: prev / dots / next */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "16px",
-          marginTop: "36px",
-          padding: "0 24px",
-        }}
-      >
+      <div className="flex items-center justify-center gap-4 mt-9 px-6">
         <button
           onClick={scrollPrev}
           aria-label="Previous"
-          style={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "50%",
-            border: "1px solid rgba(201,168,76,0.3)",
-            background: "transparent",
-            color: "#C9A84C",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-            transition: "background 0.2s, border-color 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              "rgba(201,168,76,0.1)";
-            (e.currentTarget as HTMLButtonElement).style.borderColor =
-              "rgba(201,168,76,0.7)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              "transparent";
-            (e.currentTarget as HTMLButtonElement).style.borderColor =
-              "rgba(201,168,76,0.3)";
-          }}
+          className="w-10 h-10 rounded-full border border-[#C9A84C]/30 bg-transparent text-[#C9A84C] hover:bg-[#C9A84C]/10 hover:border-[#C9A84C]/70 transition-all flex items-center justify-center"
         >
-          <ChevronLeft style={{ width: "18px", height: "18px" }} />
+          <ChevronLeft className="w-[18px] h-[18px]" />
         </button>
 
-        {/* Dots */}
-        <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+        <div className="flex gap-1.5 items-center">
           {properties.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
-              style={{
-                height: "6px",
-                width: i === currentIndex ? "22px" : "6px",
-                borderRadius: i === currentIndex ? "3px" : "50%",
-                background:
-                  i === currentIndex
-                    ? "#C9A84C"
-                    : "rgba(255,255,255,0.15)",
-                border: "none",
-                cursor: "pointer",
-                padding: 0,
-                transition: "width 0.25s, background 0.25s, border-radius 0.25s",
-              }}
+              className={`h-1.5 rounded-full transition-all ${
+                i === currentIndex
+                  ? "w-5 bg-[#C9A84C]"
+                  : "w-1.5 bg-white/15"
+              }`}
             />
           ))}
         </div>
@@ -234,56 +117,23 @@ export default function FeaturedProperties() {
         <button
           onClick={scrollNext}
           aria-label="Next"
-          style={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "50%",
-            border: "1px solid rgba(201,168,76,0.3)",
-            background: "transparent",
-            color: "#C9A84C",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-            transition: "background 0.2s, border-color 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              "rgba(201,168,76,0.1)";
-            (e.currentTarget as HTMLButtonElement).style.borderColor =
-              "rgba(201,168,76,0.7)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background =
-              "transparent";
-            (e.currentTarget as HTMLButtonElement).style.borderColor =
-              "rgba(201,168,76,0.3)";
-          }}
+          className="w-10 h-10 rounded-full border border-[#C9A84C]/30 bg-transparent text-[#C9A84C] hover:bg-[#C9A84C]/10 hover:border-[#C9A84C]/70 transition-all flex items-center justify-center"
         >
-          <ChevronRight style={{ width: "18px", height: "18px" }} />
+          <ChevronRight className="w-[18px] h-[18px]" />
         </button>
       </div>
 
       {/* Counter */}
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "12px",
-          color: "rgba(255,255,255,0.3)",
-          marginTop: "10px",
-          fontFamily: "sans-serif",
-        }}
-      >
+      <p className="text-center text-xs text-white/30 mt-2.5">
         {currentIndex + 1} / {total}
       </p>
 
       <style jsx>{`
-        .hide-scrollbar {
+        .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-        .hide-scrollbar::-webkit-scrollbar {
+        .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
       `}</style>

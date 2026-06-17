@@ -30,16 +30,14 @@ export default function VideoProof() {
   const video = videos[index];
 
   return (
-    <section id="video-proof" className="relative z-10 py-24 bg-[#F5F0E8]">
-              <div className="h-10"></div>
-
+    <section id="video-proof" className="relative z-10 py-10 bg-[#F5F0E8]">
       <div
         className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
         style={{ maxWidth: "1400px", marginLeft: "auto", marginRight: "auto" }}
       >
         {/* HEADER */}
         <div className="text-center mb-12 ">
-          <h2 className="text-5xl md:text-6xl font-display text-[#0F1923] mt-4">
+          <h2 className="text-5xl md:text-6xl font-display text-[#0F1923] mt-0">
             Property <span className="italic text-[#C9A84C]">Walkthroughs</span>
           </h2>
           <div className="h-10"></div>
@@ -48,7 +46,6 @@ export default function VideoProof() {
           </span>
         </div>
 
-        <div className="h-10"></div>
 
         {/* SLIDER WRAPPER */}
         <div className="relative flex items-center justify-center">
@@ -73,14 +70,12 @@ export default function VideoProof() {
               </video>
             </div>
             <div className="text-center mt-6">
-              <div className="h-5"></div>
               <h3 className="text-3xl font-semibold text-[#0F1923]">
                 {video.title}
               </h3>
               <p className="text-[#6B6258] text-xl mt-2 mb-2">
                 {video.description}
               </p>
-              <div className="h-5"></div>
             </div>
           </div>
 
@@ -101,16 +96,16 @@ export default function VideoProof() {
               className={`
                 rounded-full transition-all
                 h-3 sm:h-4 md:h-5 lg:h-6
-                ${i === index
-                  ? "w-8 sm:w-10 md:w-12 lg:w-14 bg-[#C9A84C]"
-                  : "w-3 sm:w-4 md:w-5 lg:w-6 bg-gray-300"
+                ${
+                  i === index
+                    ? "w-8 sm:w-10 md:w-12 lg:w-14 bg-[#C9A84C]"
+                    : "w-3 sm:w-4 md:w-5 lg:w-6 bg-gray-300"
                 }
               `}
             />
           ))}
         </div>
       </div>
-      <div className="h-2 md:h-5 lg:h-2" />
     </section>
   );
 }

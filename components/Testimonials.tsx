@@ -16,7 +16,7 @@ export default function GoogleReviews() {
   return (
     <section
       id="testimonials"
-      className="py-6 md:py-8 bg-white overflow-hidden  mt-0"
+      className="py-6 md:py-8 bg-white overflow-hidden  mt-2"
     >
       <div
         className="w-full max-w-[1400px] mx-auto px-6 lg:px-8"
@@ -43,7 +43,7 @@ export default function GoogleReviews() {
               <span className="text-[#EA4335]">e</span>
             </span>
           </h2>
-          <p className="w-full max-w-3xl mx-auto text-center text-[#64748B] text-lg md:text-xl leading-relaxed mt-6">
+          <p className="w-full max-w-3xl mx-auto text-center text-[#64748B] text-base md:text-xl leading-relaxed mt-6">
             Real feedback from verified home buyers, sellers and investors who
             trusted us with their property decisions.
           </p>

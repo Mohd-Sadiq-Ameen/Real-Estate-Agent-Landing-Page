@@ -33,7 +33,7 @@ export default function Hero() {
         <h1
           className="
             font-display
-            text-5xl sm:text-5xl md:text-[50px] lg:text-6xl xl:text-6xl
+            text-5xl sm:text-5xl md:text-[50px] lg:text-[50px]  xl:text-[50px] 
             font-light text-white
             mb-2  mt-4 md:mt-36 leading-tight
           "
@@ -109,7 +109,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="flex justify-center w-full mt-4 mb-3 md:mb-5 lg:mb-0 lg:mt-5 xl:mb-5">
+        <div className="flex justify-center w-full mt-4 mb-3 md:mb-5 lg:mb-2 lg:mt-5 xl:mb-5">
           <div className="grid grid-cols-3 gap-8 sm:gap-12 w-full max-w-md">
             {[
               { num: "500+", label: "DEALS" },
